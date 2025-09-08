@@ -1,4 +1,4 @@
-# 🚀 Richy Landing Boilerplate
+# 🚀 TIBUCE AFRIQUE
 
 Un starter moderne pour créer rapidement une landing page Next.js stylée, responsive et prête pour la production.
 
@@ -27,8 +27,8 @@ Un starter moderne pour créer rapidement une landing page Next.js stylée, resp
 ### 1. Cloner le repo
 
 ```bash
-git clone https://github.com/HermannRichy/richy-landing-boilerplate.git
-cd richy-landing-boilerplate
+git clone https://github.com/HermannRichy/tibuce-afrique.git
+cd tibuce-afrique
 ```
 
 ### 2. Installer les dépendances
