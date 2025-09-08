@@ -15,12 +15,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
     title: {
-        default: "Richy Landing Boilerplate",
-        template: "%s | Richy Landing Boilerplate",
+        default: "TIBUCE AFRIQUE",
+        template: "%s | TIBUCE AFRIQUE",
     },
     description:
-        "Un boilerplate Next.js moderne pour landing page, avec UI réactive, formulaire de contact, et intégration EmailJS.",
-    keywords: [
+        "TIBUCE, c’est un terrain de jeu pour ceux qui rêve de l’Afrique autrement , une Afrique connectée, préparée et conquérante.",
+    /*keywords: [
         "Next.js",
         "Landing Page",
         "Boilerplate",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
         shortcut: "/favicon.ico",
         apple: "/favicon.ico",
     },
-    manifest: "/site.webmanifest",
+    manifest: "/site.webmanifest", */
 };
 
 export default function RootLayout({
