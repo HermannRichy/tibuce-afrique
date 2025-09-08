@@ -103,8 +103,8 @@ const DummyContent = () => {
     return (
         <div className="container mx-auto p-8 pt-24">
             <div className="lg:w-1/2 mx-auto">
-                <h1 className="mb-4 text-center text-6xl font-bold">
-                    Hi, this is a demo <br /> of my boilerplate
+                <h1 className="mb-4 text-center text-6xl font- font-rakiby">
+                    Hi, this is a future <br /> TIBUCE AFRIQUE website
                 </h1>
                 <p className="mb-10 text-center text-sm text-zinc-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
