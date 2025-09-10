@@ -59,7 +59,9 @@ export function ContactSection() {
         <section className="container mx-auto py-16 px-4" id="contact">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold mb-4">Contactez-nous</h2>
+                    <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
+                        Contactez-nous
+                    </h2>
                     <p className="text-muted-foreground text-lg">
                         Nous sommes là pour vous aider. Envoyez-nous un message
                         !

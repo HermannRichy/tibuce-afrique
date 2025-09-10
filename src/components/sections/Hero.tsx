@@ -13,20 +13,21 @@ import {
 import HeroVideoDialog from "@/src/components/magicui/hero-video-dialog";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export function Hero() {
     const navItems = [
         {
-            name: "Fonctionnalités",
-            link: "#features",
+            name: "A propos",
+            link: "#about",
         },
         {
-            name: "Tarifs",
-            link: "#pricing",
+            name: "A venir",
+            link: "#coming",
         },
         {
-            name: "Contact",
-            link: "#contact",
+            name: "Comment participer ?",
+            link: "#process",
         },
     ];
 
@@ -40,9 +41,11 @@ export function Hero() {
                     <NavbarLogo />
                     <NavItems items={navItems} />
                     <div className="flex items-center gap-4">
-                        <NavbarButton variant="secondary">Login</NavbarButton>
-                        <NavbarButton variant="primary">
-                            Book a call
+                        <NavbarButton href="#contact" variant="secondary">
+                            Contact
+                        </NavbarButton>
+                        <NavbarButton href="/inscription" variant="primary">
+                            Participer
                         </NavbarButton>
                     </div>
                 </NavBody>
@@ -64,29 +67,29 @@ export function Hero() {
                         onClose={() => setIsMobileMenuOpen(false)}
                     >
                         {navItems.map((item, idx) => (
-                            <a
+                            <Link
                                 key={`mobile-link-${idx}`}
                                 href={item.link}
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="relative text-neutral-600 dark:text-neutral-300"
                             >
                                 <span className="block">{item.name}</span>
-                            </a>
+                            </Link>
                         ))}
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                href="#contact"
                                 variant="primary"
                                 className="w-full"
                             >
-                                Login
+                                Contact
                             </NavbarButton>
                             <NavbarButton
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                href="/inscription"
                                 variant="primary"
                                 className="w-full"
                             >
-                                Book a call
+                                Participer
                             </NavbarButton>
                         </div>
                     </MobileNavMenu>
@@ -102,30 +105,29 @@ export function Hero() {
 const DummyContent = () => {
     return (
         <div className="container mx-auto p-8 pt-24">
-            <div className="lg:w-1/2 mx-auto">
-                <h1 className="mb-4 text-center text-6xl font- font-rakiby">
-                    Hi, this is a future <br /> TIBUCE AFRIQUE website
+            <div className="lg:w-3/5 mx-auto">
+                <h1 className="mb-4 text-center text-2xl md:text-4xl lg:text-6xl text-primary font-rakiby">
+                    TIBUCE AFRIQUE : L&apos;AVENIR DU BUSINESS SE JOUE ICI
                 </h1>
-                <p className="mb-10 text-center text-sm text-zinc-500">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Numquam provident aliquam distinctio consequuntur soluta
-                    assumenda nemo harum quia tempore animi, ut, molestias,
-                    autem quas libero! Culpa ducimus dolorum placeat suscipit?
+                <p className="mb-10 text-center text-sm">
+                    Participez au tournoi de business qui prépare la nouvelle
+                    génération d&apos;entrepreneurs africains à façonner
+                    l&apos;avenir du continent.
                 </p>
             </div>
             <div className="relative">
                 <HeroVideoDialog
                     className="block dark:hidden"
                     animationStyle="top-in-bottom-out"
-                    videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                    thumbnailSrc="https://startup-template-sage.vercel.app/hero-light.png"
+                    videoSrc="/Tibuce.mp4"
+                    thumbnailSrc="/tibuce-thumbnail.png"
                     thumbnailAlt="Hero Video"
                 />
                 <HeroVideoDialog
                     className="hidden dark:block"
                     animationStyle="top-in-bottom-out"
-                    videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-                    thumbnailSrc="https://startup-template-sage.vercel.app/hero-dark.png"
+                    videoSrc="/Tibuce.mp4"
+                    thumbnailSrc="/tibuce-thumbnail.png"
                     thumbnailAlt="Hero Video"
                 />
             </div>
