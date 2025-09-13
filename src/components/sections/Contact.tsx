@@ -2,11 +2,20 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { Mail, Send, User, MessageSquare } from "lucide-react";
+import {
+    Mail,
+    Send,
+    Clock,
+    Instagram,
+    Linkedin,
+    ExternalLink,
+    Music,
+} from "lucide-react";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Textarea } from "@/src/components/ui/textarea";
 import { toast } from "sonner";
+import Link from "next/link";
 
 interface FormData {
     name: string;
@@ -55,51 +64,88 @@ export function ContactSection() {
         }
     };
 
+    const socialNetworks = [
+        {
+            name: "Instagram",
+            handle: "@tibuce_afrique",
+            icon: Instagram,
+            description:
+                "Suivez nos actualités, découvrez les coulisses des événements et connectez-vous avec la communauté TIBUCE.",
+            url: "https://instagram.com/tibuce_afrique",
+            color: "from-pink-500 to-purple-600",
+        },
+        {
+            name: "LinkedIn",
+            handle: "TIBUCE Afrique",
+            icon: Linkedin,
+            description:
+                "Rejoignez notre réseau professionnel, accédez aux opportunités d'emploi et restez informé des développements du programme.",
+            url: "https://linkedin.com/company/tibuce-afrique",
+            color: "from-blue-600 to-blue-800",
+        },
+        {
+            name: "TikTok",
+            handle: "@tibuce_afrique",
+            icon: Music,
+            description:
+                "Découvrez TIBUCE sous un angle dynamique avec des contenus créatifs, des témoignages participants et des tips entrepreneuriaux.",
+            url: "https://tiktok.com/@tibuce_afrique",
+            color: "from-black to-gray-800",
+        },
+    ];
+
     return (
         <section className="container mx-auto py-16 px-4" id="contact">
-            <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12">
+            <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-16">
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
-                        Contactez-nous
+                        Restons Connectés
                     </h2>
-                    <p className="text-muted-foreground text-lg">
-                        Nous sommes là pour vous aider. Envoyez-nous un message
-                        !
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                        Rejoignez notre communauté dynamique et restez informé
+                        de toutes les actualités TIBUCE Afrique. Nous sommes là
+                        pour vous accompagner dans votre parcours
+                        entrepreneurial.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Informations de contact */}
-                    <div className="space-y-8">
-                        <div>
-                            <h3 className="text-2xl font-semibold mb-6">
-                                Informations
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    {/* Informations de contact officielles */}
+                    <div className="lg:col-span-1">
+                        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-8 h-full">
+                            <h3 className="text-2xl font-bold mb-6 font-rakiby text-primary">
+                                Contact Officiel
                             </h3>
-                            <div className="space-y-4">
-                                <div className="flex items-center space-x-4 p-4 rounded-lg bg-muted/50">
-                                    <Mail className="h-6 w-6 text-primary" />
+                            <div className="space-y-6">
+                                <div className="flex items-start space-x-4">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <Mail className="h-6 w-6 text-primary" />
+                                    </div>
                                     <div>
-                                        <p className="font-medium">Email</p>
-                                        <p className="text-muted-foreground">
-                                            contact@exemple.com
+                                        <p className="font-semibold text-lg">
+                                            Email officiel
+                                        </p>
+                                        <p className="text-primary font-medium">
+                                            contact@tibuce-afrique.org
+                                        </p>
+                                        <p className="text-sm text-muted-foreground mt-1">
+                                            Réponse garantie sous 48h
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-center space-x-4 p-4 rounded-lg bg-muted/50">
-                                    <User className="h-6 w-6 text-primary" />
-                                    <div>
-                                        <p className="font-medium">Support</p>
-                                        <p className="text-muted-foreground">
-                                            24/7 disponible
-                                        </p>
+                                <div className="flex items-start space-x-4">
+                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <Clock className="h-6 w-6 text-primary" />
                                     </div>
-                                </div>
-                                <div className="flex items-center space-x-4 p-4 rounded-lg bg-muted/50">
-                                    <MessageSquare className="h-6 w-6 text-primary" />
                                     <div>
-                                        <p className="font-medium">Réponse</p>
+                                        <p className="font-semibold text-lg">
+                                            Support
+                                        </p>
                                         <p className="text-muted-foreground">
-                                            Sous 24h
+                                            Disponible 24/7
+                                        </p>
+                                        <p className="text-sm text-muted-foreground mt-1">
+                                            Notre équipe vous accompagne
                                         </p>
                                     </div>
                                 </div>
@@ -107,12 +153,65 @@ export function ContactSection() {
                         </div>
                     </div>
 
-                    {/* Formulaire */}
-                    <div className="bg-card border rounded-lg p-8 shadow-sm">
-                        <h3 className="text-2xl font-semibold mb-6">
-                            Envoyez un message
+                    {/* Réseaux sociaux */}
+                    <div className="lg:col-span-2">
+                        <h3 className="text-2xl font-bold mb-6 font-rakiby text-primary">
+                            Rejoignez Notre Communauté
                         </h3>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {socialNetworks.map((network) => {
+                                const IconComponent = network.icon;
+                                return (
+                                    <div
+                                        key={network.name}
+                                        className="group cursor-pointer"
+                                    >
+                                        <Link
+                                            href={network.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="block"
+                                        >
+                                            <div className="bg-card border rounded-xl p-6 h-full hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                                                <div className="flex items-center justify-between mb-4">
+                                                    <div
+                                                        className={`w-12 h-12 rounded-full bg-gradient-to-r ${network.color} flex items-center justify-center`}
+                                                    >
+                                                        <IconComponent className="h-6 w-6 text-white" />
+                                                    </div>
+                                                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                                                </div>
+                                                <h4 className="font-bold text-lg mb-1">
+                                                    {network.name}
+                                                </h4>
+                                                <p className="text-primary font-medium text-sm mb-3">
+                                                    {network.handle}
+                                                </p>
+                                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                                    {network.description}
+                                                </p>
+                                            </div>
+                                        </Link>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
 
+                {/* Formulaire de contact */}
+                <div className="max-w-4xl mx-auto">
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl font-bold mb-2 font-rakiby text-primary">
+                            Envoyez-nous un Message
+                        </h3>
+                        <p className="text-muted-foreground">
+                            Une question ? Un projet ? Nous sommes là pour vous
+                            écouter.
+                        </p>
+                    </div>
+
+                    <div className="bg-card border rounded-lg p-8 shadow-sm">
                         <form
                             onSubmit={handleSubmit(onSubmit)}
                             className="space-y-6"
@@ -201,7 +300,7 @@ export function ContactSection() {
 
                             <Button
                                 type="submit"
-                                className="w-full"
+                                className="w-full cursor-pointer"
                                 disabled={loading}
                                 size="lg"
                             >
