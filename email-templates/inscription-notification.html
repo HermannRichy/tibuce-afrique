@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nouvelle Inscription TIBUCE Afrique</title>
+        <style>
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                background-color: #f8f9fa;
+            }
+            .container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            .header h1 {
+                margin: 0;
+                font-size: 28px;
+                font-weight: bold;
+            }
+            .header p {
+                margin: 10px 0 0 0;
+                opacity: 0.9;
+            }
+            .section {
+                margin-bottom: 25px;
+                padding: 20px;
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                border-left: 4px solid #667eea;
+            }
+            .section h2 {
+                color: #667eea;
+                margin-top: 0;
+                margin-bottom: 15px;
+                font-size: 20px;
+            }
+            .field {
+                margin-bottom: 12px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .field-label {
+                font-weight: bold;
+                min-width: 200px;
+                color: #555;
+            }
+            .field-value {
+                color: #333;
+                flex: 1;
+            }
+            .participants-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+                margin-top: 15px;
+            }
+            .participant-card {
+                background-color: white;
+                padding: 15px;
+                border-radius: 6px;
+                border: 1px solid #e0e0e0;
+            }
+            .participant-title {
+                font-weight: bold;
+                color: #667eea;
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+            .status-badge {
+                display: inline-block;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                font-weight: bold;
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+            .status-student {
+                background-color: #e3f2fd;
+                color: #1976d2;
+            }
+            .status-entrepreneur {
+                background-color: #e8f5e8;
+                color: #388e3c;
+            }
+            .status-professional {
+                background-color: #fff3e0;
+                color: #f57c00;
+            }
+            .status-other {
+                background-color: #f3e5f5;
+                color: #7b1fa2;
+            }
+            .footer {
+                margin-top: 30px;
+                padding: 20px;
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                text-align: center;
+                color: #666;
+                font-size: 14px;
+            }
+            .alert {
+                background-color: #fff3cd;
+                border: 1px solid #ffeaa7;
+                color: #856404;
+                padding: 15px;
+                border-radius: 6px;
+                margin-bottom: 20px;
+            }
+            @media (max-width: 600px) {
+                body {
+                    padding: 10px;
+                }
+                .container {
+                    padding: 20px;
+                }
+                .field {
+                    flex-direction: column;
+                }
+                .field-label {
+                    min-width: auto;
+                    margin-bottom: 5px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>🎉 Nouvelle Inscription TIBUCE Afrique</h1>
+                <p>Une nouvelle équipe vient de s'inscrire à l'événement</p>
+            </div>
+
+            <div class="alert">
+                <strong>⚠️ Action requise :</strong> Veuillez vérifier les
+                informations et valider l'inscription dans le système de
+                gestion.
+            </div>
+
+            <!-- Informations générales -->
+            <div class="section">
+                <h2>📋 Informations Générales</h2>
+                <div class="field">
+                    <span class="field-label">Nom de l'équipe :</span>
+                    <span class="field-value"
+                        ><strong>{{teamName}}</strong></span
+                    >
+                </div>
+                <div class="field">
+                    <span class="field-label">Pays de représentation :</span>
+                    <span class="field-value">{{country}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Édition concernée :</span>
+                    <span class="field-value">{{edition}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Organisation :</span>
+                    <span class="field-value">{{organization}}</span>
+                </div>
+                {{#organizationOther}}
+                <div class="field">
+                    <span class="field-label">Organisation (détails) :</span>
+                    <span class="field-value">{{organizationOther}}</span>
+                </div>
+                {{/organizationOther}}
+                <div class="field">
+                    <span class="field-label">Nombre de membres :</span>
+                    <span class="field-value">{{numberOfMembers}} membres</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Représentant :</span>
+                    <span class="field-value">{{teamRepresentative}}</span>
+                </div>
+            </div>
+
+            <!-- Informations du projet -->
+            {{#projectTitle}}
+            <div class="section">
+                <h2>💡 Informations du Projet</h2>
+                <div class="field">
+                    <span class="field-label">Titre du projet :</span>
+                    <span class="field-value">{{projectTitle}}</span>
+                </div>
+                {{#projectDescription}}
+                <div class="field">
+                    <span class="field-label">Description :</span>
+                    <span class="field-value">{{projectDescription}}</span>
+                </div>
+                {{/projectDescription}}
+                <div class="field">
+                    <span class="field-label">Volet choisi :</span>
+                    <span class="field-value">{{selectedTrack}}</span>
+                </div>
+            </div>
+            {{/projectTitle}}
+
+            <!-- Informations de paiement -->
+            <div class="section">
+                <h2>💳 Informations de Paiement</h2>
+                <div class="field">
+                    <span class="field-label">Mode de paiement :</span>
+                    <span class="field-value">{{paymentMethod}}</span>
+                </div>
+                {{#paymentMethodOther}}
+                <div class="field">
+                    <span class="field-label"
+                        >Mode de paiement (détails) :</span
+                    >
+                    <span class="field-value">{{paymentMethodOther}}</span>
+                </div>
+                {{/paymentMethodOther}}
+                <div class="field">
+                    <span class="field-label">Référence de paiement :</span>
+                    <span class="field-value"
+                        ><strong>{{paymentReference}}</strong></span
+                    >
+                </div>
+            </div>
+
+            <!-- Participants -->
+            <div class="section">
+                <h2>👥 Participants</h2>
+                <div class="participants-grid">
+                    <!-- Participant 1 -->
+                    <div class="participant-card">
+                        <div class="participant-title">
+                            👤 Participant 1 (Représentant)
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Nom :</span>
+                            <span class="field-value"
+                                >{{participant1Name}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Email :</span>
+                            <span class="field-value"
+                                >{{participant1Email}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Téléphone :</span>
+                            <span class="field-value"
+                                >{{participant1Phone}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Date de naissance :</span>
+                            <span class="field-value"
+                                >{{participant1BirthDate}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Sexe :</span>
+                            <span class="field-value"
+                                >{{participant1Gender}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Niveau d'études :</span>
+                            <span class="field-value"
+                                >{{participant1Education}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Statut :</span>
+                            <span class="field-value"
+                                >{{participant1Status}}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Participant 2 -->
+                    <div class="participant-card">
+                        <div class="participant-title">👤 Participant 2</div>
+                        <div class="field">
+                            <span class="field-label">Nom :</span>
+                            <span class="field-value"
+                                >{{participant2Name}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Email :</span>
+                            <span class="field-value"
+                                >{{participant2Email}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Téléphone :</span>
+                            <span class="field-value"
+                                >{{participant2Phone}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Date de naissance :</span>
+                            <span class="field-value"
+                                >{{participant2BirthDate}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Sexe :</span>
+                            <span class="field-value"
+                                >{{participant2Gender}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Niveau d'études :</span>
+                            <span class="field-value"
+                                >{{participant2Education}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Statut :</span>
+                            <span class="field-value"
+                                >{{participant2Status}}</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Participant 3 (si applicable) -->
+                    {{#participant3Name}}
+                    <div class="participant-card">
+                        <div class="participant-title">👤 Participant 3</div>
+                        <div class="field">
+                            <span class="field-label">Nom :</span>
+                            <span class="field-value"
+                                >{{participant3Name}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Email :</span>
+                            <span class="field-value"
+                                >{{participant3Email}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Téléphone :</span>
+                            <span class="field-value"
+                                >{{participant3Phone}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Date de naissance :</span>
+                            <span class="field-value"
+                                >{{participant3BirthDate}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Sexe :</span>
+                            <span class="field-value"
+                                >{{participant3Gender}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Niveau d'études :</span>
+                            <span class="field-value"
+                                >{{participant3Education}}</span
+                            >
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Statut :</span>
+                            <span class="field-value"
+                                >{{participant3Status}}</span
+                            >
+                        </div>
+                    </div>
+                    {{/participant3Name}}
+                </div>
+            </div>
+
+            <!-- Validation -->
+            <div class="section">
+                <h2>✅ Validation</h2>
+                <div class="field">
+                    <span class="field-label">Date de validation :</span>
+                    <span class="field-value">{{validationDate}}</span>
+                </div>
+                <div class="field">
+                    <span class="field-label">Conditions acceptées :</span>
+                    <span class="field-value">{{acceptTerms}}</span>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p><strong>📧 Email envoyé automatiquement</strong></p>
+                <p>Inscription reçue le {{timestamp}}</p>
+                <p>ID de l'inscription : {{inscriptionId}}</p>
+                <hr
+                    style="
+                        margin: 15px 0;
+                        border: none;
+                        border-top: 1px solid #ddd;
+                    "
+                />
+                <p>
+                    <strong>TIBUCE Afrique</strong> - Révolution
+                    entrepreneuriale africaine
+                </p>
+                <p>
+                    Email : contact@tibuce-afrique.org | Site :
+                    www.tibuce-afrique.org
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
