@@ -25,7 +25,7 @@ interface FormData {
 
 export function ContactSection() {
     const [loading, setLoading] = useState(false);
-    const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+    const [_, setStatus] = useState<"idle" | "success" | "error">("idle");
 
     const {
         register,

@@ -1,7 +1,6 @@
 import { MagicCard } from "@/src/components/magicui/magic-card";
 import { Plus, Layout, Rocket } from "lucide-react";
 import { Button } from "../ui/button";
-import styles from "./card.module.css";
 
 export function AboutSection() {
     return (
@@ -47,7 +46,7 @@ export function AboutSection() {
                                 entrepreneuriale africaine. Nous identifions et
                                 développons la prochaine génération de leaders
                                 économiques du continent à travers une
-                                plateforme d'excellence unique.
+                                plateforme d&apos;excellence unique.
                             </p>
                         </div>
                     </MagicCard>
@@ -69,9 +68,9 @@ export function AboutSection() {
                             </h3>
                             <p className="text-muted-foreground text-sm">
                                 Un tournoi innovant qui transforme
-                                l'apprentissage en expérience concrète. Les
+                                l&apos;apprentissage en expérience concrète. Les
                                 participants relèvent des défis business réels
-                                dans un environnement simulant l'écosystème
+                                dans un environnement simulant l&apos;écosystème
                                 entrepreneurial africain.
                             </p>
                         </div>
@@ -94,10 +93,10 @@ export function AboutSection() {
                             </h3>
                             <p className="text-muted-foreground text-sm">
                                 Nous croyons au potentiel extraordinaire de
-                                l'Afrique et sa jeunesse. Notre approche combine
-                                formation intensive, mentorat et réseautage pour
-                                créer un écosystème d'excellence
-                                entrepreneuriale.
+                                l&apos;Afrique et sa jeunesse. Notre approche
+                                combine formation intensive, mentorat et
+                                réseautage pour créer un écosystème
+                                d&apos;excellence entrepreneuriale.
                             </p>
                         </div>
                     </MagicCard>

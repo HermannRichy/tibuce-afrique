@@ -82,13 +82,13 @@ export function ProcessSection() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16 lg:w-3/5 mx-auto">
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
-                        Comment Rejoindre l'Aventure TIBUCE ?
+                        Comment Rejoindre l&apos;Aventure TIBUCE ?
                     </h2>
                     <p className="text-sm">
                         Découvrez le processus simple et structuré qui vous
                         mènera vers une expérience entrepreneuriale
                         transformatrice. Chaque étape est conçue pour vous
-                        préparer au mieux à l'excellence et au succès.
+                        préparer au mieux à l&apos;excellence et au succès.
                     </p>
                 </div>
 
@@ -111,7 +111,7 @@ export function ProcessSection() {
                                             : "lg:flex-row-reverse"
                                     }`}
                                 >
-                                    {/* Carte d'étape */}
+                                    {/* Carte d&apos;étape */}
                                     <div className="w-full lg:w-5/12">
                                         <MagicCard
                                             gradientFrom={step.gradientFrom}
@@ -186,7 +186,7 @@ export function ProcessSection() {
                                         </div>
                                     </div>
 
-                                    {/* Espace vide pour l'alignement */}
+                                    {/* Espace vide pour l&apos;alignement */}
                                     <div className="hidden lg:block w-5/12"></div>
                                 </div>
                             );
@@ -194,7 +194,7 @@ export function ProcessSection() {
                     </div>
                 </div>
 
-                {/* Section d'appel à l'action */}
+                {/* Section d&apos;appel à l&apos;action */}
                 <div className="text-center mt-16">
                     <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-8 lg:p-12">
                         <h3 className="text-2xl lg:text-4xl font-bold mb-4 font-rakiby text-primary">
@@ -203,8 +203,8 @@ export function ProcessSection() {
                         <p className="text-sm text-muted-foreground mb-8 max-w-2xl mx-auto">
                             Rejoignez des milliers de jeunes entrepreneurs
                             africains qui transforment leurs idées en succès. Le
-                            processus d'inscription est simple, rapide et vous
-                            mène directement vers l'excellence.
+                            processus d&apos;inscription est simple, rapide et
+                            vous mène directement vers l&apos;excellence.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -215,7 +215,7 @@ export function ProcessSection() {
                             >
                                 <Link href="/inscription">
                                     <UserPlus className="size-5 mr-2" />
-                                    Commencer l'Inscription
+                                    Commencer l&apos;Inscription
                                 </Link>
                             </Button>
                             {/* 

@@ -5,8 +5,6 @@ import {
     Linkedin,
     Music,
     Mail,
-    MapPin,
-    Phone,
     Globe,
     Heart,
     ArrowRight,
@@ -63,9 +61,9 @@ export function Footer() {
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
                                 Forger les leaders de demain à travers
-                                l'excellence entrepreneuriale. Rejoignez la
-                                révolution qui transforme l'Afrique une idée à
-                                la fois.
+                                l&apos;excellence entrepreneuriale. Rejoignez la
+                                révolution qui transforme l&apos;Afrique une
+                                idée à la fois.
                             </p>
                         </div>
 
@@ -158,7 +156,7 @@ export function Footer() {
                                 Recevez nos actualités et opportunités
                             </p>
                             <Button asChild size="sm" className="w-full">
-                                <Link href="/newsletter">S'abonner</Link>
+                                <Link href="/newsletter">S&apos;abonner</Link>
                             </Button>
                         </div>
                     </div>
@@ -177,7 +175,7 @@ export function Footer() {
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
                             <span>Fait avec</span>
                             <Heart className="h-4 w-4 text-red-500" />
-                            <span>pour l'Afrique</span>
+                            <span>pour l&apos;Afrique</span>
                         </div>
 
                         <div className="text-sm text-muted-foreground">

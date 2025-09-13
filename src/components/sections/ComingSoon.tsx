@@ -45,14 +45,14 @@ export function ComingSoonSection() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12 lg:w-3/5 mx-auto">
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
-                        Nos Prochains Événements : Rejoignez l'Excellence
+                        Nos Prochains Événements : Rejoignez l&apos;Excellence
                     </h2>
                     <p className="text-sm">
                         Découvrez les prochaines éditions de TIBUCE Afrique et
                         participez à la révolution entrepreneuriale qui
                         transforme le continent. Chaque événement est conçu pour
-                        vous offrir une expérience unique d'apprentissage, de
-                        networking et de développement professionnel.
+                        vous offrir une expérience unique d&apos;apprentissage,
+                        de networking et de développement professionnel.
                     </p>
                 </div>
 
@@ -121,14 +121,14 @@ export function ComingSoonSection() {
                                     </ul>
                                 </div>
 
-                                {/* Bouton d'action */}
+                                {/* Bouton d&apos;action */}
                                 <Button
                                     asChild
                                     className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 rounded-lg hover:cursor-pointer transition-colors"
                                     size="lg"
                                 >
                                     <Link href="/inscription">
-                                        S'INSCRIRE À CETTE ÉDITION
+                                        S&apos;INSCRIRE À CETTE ÉDITION
                                     </Link>
                                 </Button>
                             </div>

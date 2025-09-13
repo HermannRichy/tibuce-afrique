@@ -22,7 +22,7 @@ export default function PrivacyPage() {
                             <Button variant="outline" size="sm" asChild>
                                 <Link href="/">
                                     <ArrowLeft className="h-4 w-4 mr-2" />
-                                    Retour à l'accueil
+                                    Retour à l&apos;accueil
                                 </Link>
                             </Button>
                         </div>
@@ -101,8 +101,9 @@ export default function PrivacyPage() {
                                                 <strong>
                                                     Informations académiques :
                                                 </strong>{" "}
-                                                Niveau d'études, établissement,
-                                                domaine d'études
+                                                Niveau d&apos;études,
+                                                établissement, domaine
+                                                d&apos;études
                                             </span>
                                         </li>
                                         <li className="flex items-start gap-2">
@@ -155,8 +156,8 @@ export default function PrivacyPage() {
                                             aux événements TIBUCE
                                         </li>
                                         <li>
-                                            • Communication d'informations sur
-                                            nos programmes
+                                            • Communication d&apos;informations
+                                            sur nos programmes
                                         </li>
                                         <li>
                                             • Amélioration de nos services et
@@ -176,11 +177,11 @@ export default function PrivacyPage() {
                                     <ul className="space-y-2 text-sm text-muted-foreground">
                                         <li>
                                             • Consentement explicite pour
-                                            l'inscription
+                                            l&apos;inscription
                                         </li>
                                         <li>
                                             • Intérêt légitime pour
-                                            l'amélioration des services
+                                            l&apos;amélioration des services
                                         </li>
                                         <li>
                                             • Exécution du contrat pour les
@@ -221,7 +222,8 @@ export default function PrivacyPage() {
                                         </li>
                                         <li>
                                             • Avec nos partenaires officiels
-                                            pour l'organisation des événements
+                                            pour l&apos;organisation des
+                                            événements
                                         </li>
                                         <li>
                                             • Pour respecter une obligation
@@ -268,7 +270,7 @@ export default function PrivacyPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="bg-primary/5 rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Droit d'accès
+                                        Droit d&apos;accès
                                     </h3>
                                     <p className="text-sm text-muted-foreground">
                                         Vous pouvez demander une copie de toutes
@@ -288,7 +290,7 @@ export default function PrivacyPage() {
 
                                 <div className="bg-primary/5 rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Droit d'effacement
+                                        Droit d&apos;effacement
                                     </h3>
                                     <p className="text-sm text-muted-foreground">
                                         Vous pouvez demander la suppression de
@@ -298,7 +300,7 @@ export default function PrivacyPage() {
 
                                 <div className="bg-primary/5 rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Droit d'opposition
+                                        Droit d&apos;opposition
                                     </h3>
                                     <p className="text-sm text-muted-foreground">
                                         Vous pouvez vous opposer au traitement
@@ -318,7 +320,7 @@ export default function PrivacyPage() {
                                 <p className="text-muted-foreground mb-4">
                                     Notre site utilise des cookies pour
                                     améliorer votre expérience de navigation.
-                                    Vous pouvez contrôler l'utilisation des
+                                    Vous pouvez contrôler l&apos;utilisation des
                                     cookies via les paramètres de votre
                                     navigateur.
                                 </p>
@@ -340,8 +342,8 @@ export default function PrivacyPage() {
                                             <strong>
                                                 Cookies analytiques :
                                             </strong>{" "}
-                                            Pour comprendre l'utilisation du
-                                            site
+                                            Pour comprendre l&apos;utilisation
+                                            du site
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-3">

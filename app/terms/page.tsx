@@ -25,12 +25,12 @@ export default function TermsPage() {
                             <Button variant="outline" size="sm" asChild>
                                 <Link href="/">
                                     <ArrowLeft className="h-4 w-4 mr-2" />
-                                    Retour à l'accueil
+                                    Retour à l&apos;accueil
                                 </Link>
                             </Button>
                         </div>
                         <h1 className="text-4xl lg:text-5xl font-bold font-rakiby text-primary mb-4">
-                            Conditions d'Utilisation
+                            Conditions d&apos;Utilisation
                         </h1>
                         <p className="text-lg text-muted-foreground">
                             Dernière mise à jour :{" "}
@@ -59,10 +59,11 @@ export default function TermsPage() {
                                 </div>
                                 <p className="text-muted-foreground leading-relaxed">
                                     En accédant et en utilisant le site web de
-                                    TIBUCE Afrique, vous acceptez d'être lié par
-                                    ces conditions d'utilisation. Si vous
-                                    n'acceptez pas ces conditions, veuillez ne
-                                    pas utiliser notre site ou nos services.
+                                    TIBUCE Afrique, vous acceptez d&apos;être
+                                    lié par ces conditions d&apos;utilisation.
+                                    Si vous n&apos;acceptez pas ces conditions,
+                                    veuillez ne pas utiliser notre site ou nos
+                                    services.
                                 </p>
                             </div>
                         </section>
@@ -88,9 +89,9 @@ export default function TermsPage() {
                                             </span>
                                             <span>
                                                 <strong>
-                                                    "TIBUCE Afrique"
+                                                    &quot;TIBUCE Afrique&quot;
                                                 </strong>{" "}
-                                                désigne l'organisation
+                                                désigne l&apos;organisation
                                                 organisatrice des événements
                                                 entrepreneuriaux
                                             </span>
@@ -100,7 +101,9 @@ export default function TermsPage() {
                                                 •
                                             </span>
                                             <span>
-                                                <strong>"Participant"</strong>{" "}
+                                                <strong>
+                                                    &quot;Participant&quot;
+                                                </strong>{" "}
                                                 désigne toute personne inscrite
                                                 aux événements TIBUCE
                                             </span>
@@ -110,7 +113,9 @@ export default function TermsPage() {
                                                 •
                                             </span>
                                             <span>
-                                                <strong>"Services"</strong>{" "}
+                                                <strong>
+                                                    &quot;Services&quot;
+                                                </strong>{" "}
                                                 désigne tous les programmes,
                                                 événements et contenus proposés
                                                 par TIBUCE Afrique
@@ -121,8 +126,10 @@ export default function TermsPage() {
                                                 •
                                             </span>
                                             <span>
-                                                <strong>"Site"</strong> désigne
-                                                le site web
+                                                <strong>
+                                                    &quot;Site&quot;
+                                                </strong>{" "}
+                                                désigne le site web
                                                 www.tibuce-afrique.org
                                             </span>
                                         </div>
@@ -156,7 +163,8 @@ export default function TermsPage() {
                                         <li className="flex items-start gap-2">
                                             <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
                                             <span>
-                                                S'inscrire aux programmes TIBUCE
+                                                S&apos;inscrire aux programmes
+                                                TIBUCE
                                             </span>
                                         </li>
                                         <li className="flex items-start gap-2">
@@ -198,7 +206,7 @@ export default function TermsPage() {
                                             <XCircle className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                                             <span>
                                                 Tentative de piratage ou
-                                                d'intrusion
+                                                d&apos;intrusion
                                             </span>
                                         </li>
                                         <li className="flex items-start gap-2">
@@ -222,7 +230,7 @@ export default function TermsPage() {
                             <div className="space-y-6">
                                 <div className="bg-card border rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Processus d'inscription
+                                        Processus d&apos;inscription
                                     </h3>
                                     <div className="space-y-3 text-sm text-muted-foreground">
                                         <div className="flex items-start gap-2">
@@ -231,7 +239,7 @@ export default function TermsPage() {
                                             </span>
                                             <span>
                                                 Remplissage complet du
-                                                formulaire d'inscription
+                                                formulaire d&apos;inscription
                                             </span>
                                         </div>
                                         <div className="flex items-start gap-2">
@@ -248,8 +256,8 @@ export default function TermsPage() {
                                                 3.
                                             </span>
                                             <span>
-                                                Confirmation d'inscription par
-                                                email
+                                                Confirmation d&apos;inscription
+                                                par email
                                             </span>
                                         </div>
                                         <div className="flex items-start gap-2">
@@ -266,24 +274,25 @@ export default function TermsPage() {
 
                                 <div className="bg-card border rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Critères d'éligibilité
+                                        Critères d&apos;éligibilité
                                     </h3>
                                     <ul className="space-y-2 text-sm text-muted-foreground">
                                         <li>• Être âgé de 18 à 35 ans</li>
                                         <li>
                                             • Avoir un projet entrepreneurial ou
-                                            une idée d'entreprise
+                                            une idée d&apos;entreprise
                                         </li>
                                         <li>
-                                            • Être résident d'un pays africain
+                                            • Être résident d&apos;un pays
+                                            africain
                                         </li>
                                         <li>
-                                            • S'engager à participer activement
-                                            aux événements
+                                            • S&apos;engager à participer
+                                            activement aux événements
                                         </li>
                                         <li>
-                                            • Respecter les valeurs et l'éthique
-                                            de TIBUCE Afrique
+                                            • Respecter les valeurs et
+                                            l&apos;éthique de TIBUCE Afrique
                                         </li>
                                     </ul>
                                 </div>
@@ -315,7 +324,7 @@ export default function TermsPage() {
                                             sans autorisation écrite
                                         </li>
                                         <li>
-                                            • L'utilisation commerciale est
+                                            • L&apos;utilisation commerciale est
                                             strictement interdite
                                         </li>
                                         <li>
@@ -334,8 +343,8 @@ export default function TermsPage() {
                                         vous conservez la propriété de vos
                                         projets et idées. Toutefois, vous
                                         accordez à TIBUCE Afrique le droit
-                                        d'utiliser vos contributions pour la
-                                        promotion de nos programmes, dans le
+                                        d&apos;utiliser vos contributions pour
+                                        la promotion de nos programmes, dans le
                                         respect de votre confidentialité.
                                     </p>
                                 </div>
@@ -409,9 +418,9 @@ export default function TermsPage() {
                             <div className="bg-card border rounded-lg p-6">
                                 <p className="text-muted-foreground mb-4">
                                     TIBUCE Afrique se réserve le droit de
-                                    modifier ces conditions d'utilisation à tout
-                                    moment. Les modifications prendront effet
-                                    dès leur publication sur cette page.
+                                    modifier ces conditions d&apos;utilisation à
+                                    tout moment. Les modifications prendront
+                                    effet dès leur publication sur cette page.
                                 </p>
                                 <div className="bg-primary/5 rounded-lg p-4">
                                     <p className="text-sm font-medium text-primary mb-2">
@@ -461,7 +470,7 @@ export default function TermsPage() {
                                     <ul className="space-y-2 text-sm text-muted-foreground">
                                         <li>
                                             • Violation de ces conditions
-                                            d'utilisation
+                                            d&apos;utilisation
                                         </li>
                                         <li>
                                             • Comportement inapproprié lors des
@@ -473,7 +482,7 @@ export default function TermsPage() {
                                         </li>
                                         <li>
                                             • Fausses informations lors de
-                                            l'inscription
+                                            l&apos;inscription
                                         </li>
                                     </ul>
                                 </div>
@@ -488,10 +497,10 @@ export default function TermsPage() {
 
                             <div className="bg-card border rounded-lg p-6">
                                 <p className="text-muted-foreground mb-4">
-                                    Ces conditions d'utilisation sont régies par
-                                    le droit béninois. Tout litige sera soumis à
-                                    la compétence exclusive des tribunaux de
-                                    Cotonou, Bénin.
+                                    Ces conditions d&apos;utilisation sont
+                                    régies par le droit béninois. Tout litige
+                                    sera soumis à la compétence exclusive des
+                                    tribunaux de Cotonou, Bénin.
                                 </p>
                                 <div className="bg-primary/5 rounded-lg p-4">
                                     <p className="text-sm font-medium text-primary mb-2">
@@ -516,8 +525,9 @@ export default function TermsPage() {
                             <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl p-8">
                                 <p className="text-muted-foreground mb-6">
                                     Pour toute question concernant ces
-                                    conditions d'utilisation ou nos services,
-                                    n'hésitez pas à nous contacter :
+                                    conditions d&apos;utilisation ou nos
+                                    services, n&apos;hésitez pas à nous
+                                    contacter :
                                 </p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -526,7 +536,7 @@ export default function TermsPage() {
                                         <div>
                                             <p className="font-medium">Email</p>
                                             <p className="text-sm text-muted-foreground">
-                                                contact@tibuce-afrique.org
+                                                contact{`@`}tibuce-afrique.org
                                             </p>
                                         </div>
                                     </div>
