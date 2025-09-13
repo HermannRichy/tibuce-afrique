@@ -25,7 +25,6 @@ interface FormData {
 
 export function ContactSection() {
     const [loading, setLoading] = useState(false);
-    const [_, setStatus] = useState<"idle" | "success" | "error">("idle");
 
     const {
         register,
@@ -36,7 +35,6 @@ export function ContactSection() {
 
     const onSubmit = async (data: FormData) => {
         setLoading(true);
-        setStatus("idle");
 
         try {
             await emailjs.send(
@@ -50,14 +48,12 @@ export function ContactSection() {
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
 
-            setStatus("success");
             toast.success(
                 "Message envoyé avec succès ! Nous vous répondrons bientôt."
             );
             reset();
         } catch (error) {
             console.error("Erreur lors de l'envoi:", error);
-            setStatus("error");
             toast.error("Une erreur est survenue. Veuillez réessayer.");
         } finally {
             setLoading(false);
