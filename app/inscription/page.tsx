@@ -6,19 +6,11 @@ import { Footer } from "@/src/components/sections/Footer";
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Textarea } from "@/src/components/ui/textarea";
-import { Checkbox } from "@/src/components/ui/checkbox";
 import {
     ArrowLeft,
-    Users,
     Send,
-    CheckCircle,
     User,
-    Phone,
-    Mail,
-    Calendar,
-    MapPin,
     Building,
-    GraduationCap,
     CreditCard,
     FileText,
     Shield,
@@ -76,7 +68,6 @@ interface FormData {
 
 export default function InscriptionPage() {
     const [loading, setLoading] = useState(false);
-    const [numberOfMembers, setNumberOfMembers] = useState<"2" | "3">("2");
 
     const {
         register,
@@ -221,11 +212,13 @@ export default function InscriptionPage() {
     ) => {
         const currentValues = (watch(field) as string[]) || [];
         if (checked) {
-            setValue(field, [...currentValues, value] as any);
+            setValue(field, [...currentValues, value] as unknown as string[]);
         } else {
             setValue(
                 field,
-                currentValues.filter((item) => item !== value) as any
+                currentValues.filter(
+                    (item) => item !== value
+                ) as unknown as string[]
             );
         }
     };
@@ -375,7 +368,7 @@ export default function InscriptionPage() {
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-medium mb-2">
                                         Précisez l&apos;organisation représentée
-                                        (si "Autre")
+                                        (si &quot;Autre&quot;)
                                     </label>
                                     <Input
                                         {...register("organizationOther")}
