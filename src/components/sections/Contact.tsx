@@ -63,29 +63,29 @@ export function ContactSection() {
     const socialNetworks = [
         {
             name: "Instagram",
-            handle: "@tibuce_afrique",
+            handle: "@tibuce_africa",
             icon: Instagram,
             description:
                 "Suivez nos actualités, découvrez les coulisses des événements et connectez-vous avec la communauté TIBUCE.",
-            url: "https://instagram.com/tibuce_afrique",
+            url: "https://instagram.com/tibuce_africa",
             color: "from-pink-500 to-purple-600",
         },
         {
             name: "LinkedIn",
-            handle: "TIBUCE Afrique",
+            handle: "TIBUCE Africa",
             icon: Linkedin,
             description:
                 "Rejoignez notre réseau professionnel, accédez aux opportunités d'emploi et restez informé des développements du programme.",
-            url: "https://linkedin.com/company/tibuce-afrique",
+            url: "https://linkedin.com/company/tibuce-africa",
             color: "from-blue-600 to-blue-800",
         },
         {
             name: "TikTok",
-            handle: "@tibuce_afrique",
+            handle: "@tibuce_africa",
             icon: Music,
             description:
                 "Découvrez TIBUCE sous un angle dynamique avec des contenus créatifs, des témoignages participants et des tips entrepreneuriaux.",
-            url: "https://tiktok.com/@tibuce_afrique",
+            url: "https://tiktok.com/@tibuce_africa",
             color: "from-black to-gray-800",
         },
     ];
@@ -99,7 +99,7 @@ export function ContactSection() {
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         Rejoignez notre communauté dynamique et restez informé
-                        de toutes les actualités TIBUCE Afrique. Nous sommes là
+                        de toutes les actualités TIBUCE Africa. Nous sommes là
                         pour vous accompagner dans votre parcours
                         entrepreneurial.
                     </p>
@@ -122,7 +122,7 @@ export function ContactSection() {
                                             Email officiel
                                         </p>
                                         <p className="text-primary font-medium">
-                                            contact@tibuce-afrique.org
+                                            contact@tibuce-africa.org
                                         </p>
                                         <p className="text-sm text-muted-foreground mt-1">
                                             Réponse garantie sous 48h

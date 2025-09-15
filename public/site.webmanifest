@@ -1,0 +1,49 @@
+{
+    "name": "TIBUCE Africa - L'Avenir du Business se Joue Ici",
+    "short_name": "TIBUCE Africa",
+    "description": "Rejoignez la révolution entrepreneuriale africaine. Défis business, mentorat et réseautage pour forger les leaders de demain.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#667eea",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "fr",
+    "categories": ["education", "business", "productivity"],
+    "icons": [
+        {
+            "src": "/logo-tibuce.jpeg",
+            "sizes": "192x192",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/logo-tibuce.jpeg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "purpose": "any maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/logo-tibuce.jpeg",
+            "sizes": "1280x720",
+            "type": "image/jpeg",
+            "form_factor": "wide"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "S'inscrire",
+            "short_name": "Inscription",
+            "description": "Rejoignez TIBUCE Africa",
+            "url": "/inscription",
+            "icons": [
+                {
+                    "src": "/logo-tibuce.jpeg",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ]
+}

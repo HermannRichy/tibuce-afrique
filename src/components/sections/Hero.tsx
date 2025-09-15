@@ -107,7 +107,7 @@ const DummyContent = () => {
         <div className="container mx-auto p-8 pt-24">
             <div className="lg:w-3/5 mx-auto">
                 <h1 className="mb-4 text-center text-2xl md:text-4xl lg:text-6xl text-primary font-rakiby">
-                    TIBUCE AFRIQUE : L&apos;AVENIR DU BUSINESS SE JOUE ICI
+                    TIBUCE AFRICA : L&apos;AVENIR DU BUSINESS SE JOUE ICI
                 </h1>
                 <p className="mb-10 text-center text-sm">
                     Participez au tournoi de business qui prépare la nouvelle

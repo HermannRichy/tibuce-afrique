@@ -251,7 +251,7 @@ export default function InscriptionPage() {
                             </Button>
                         </div>
                         <h1 className="text-4xl lg:text-5xl font-bold font-rakiby text-primary mb-4">
-                            Inscription TIBUCE Afrique
+                            Inscription TIBUCE Africa
                         </h1>
                         <p className="text-lg text-muted-foreground">
                             Rejoignez la révolution entrepreneuriale africaine

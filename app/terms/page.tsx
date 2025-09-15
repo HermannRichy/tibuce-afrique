@@ -59,9 +59,9 @@ export default function TermsPage() {
                                 </div>
                                 <p className="text-muted-foreground leading-relaxed">
                                     En accédant et en utilisant le site web de
-                                    TIBUCE Afrique, vous acceptez d&apos;être
-                                    lié par ces conditions d&apos;utilisation.
-                                    Si vous n&apos;acceptez pas ces conditions,
+                                    TIBUCE Africa, vous acceptez d&apos;être lié
+                                    par ces conditions d&apos;utilisation. Si
+                                    vous n&apos;acceptez pas ces conditions,
                                     veuillez ne pas utiliser notre site ou nos
                                     services.
                                 </p>
@@ -89,7 +89,7 @@ export default function TermsPage() {
                                             </span>
                                             <span>
                                                 <strong>
-                                                    &quot;TIBUCE Afrique&quot;
+                                                    &quot;TIBUCE Africa&quot;
                                                 </strong>{" "}
                                                 désigne l&apos;organisation
                                                 organisatrice des événements
@@ -118,7 +118,7 @@ export default function TermsPage() {
                                                 </strong>{" "}
                                                 désigne tous les programmes,
                                                 événements et contenus proposés
-                                                par TIBUCE Afrique
+                                                par TIBUCE Africa
                                             </span>
                                         </div>
                                         <div className="flex items-start gap-2">
@@ -130,7 +130,7 @@ export default function TermsPage() {
                                                     &quot;Site&quot;
                                                 </strong>{" "}
                                                 désigne le site web
-                                                www.tibuce-afrique.org
+                                                www.tibuce-africa.org
                                             </span>
                                         </div>
                                     </div>
@@ -292,7 +292,7 @@ export default function TermsPage() {
                                         </li>
                                         <li>
                                             • Respecter les valeurs et
-                                            l&apos;éthique de TIBUCE Afrique
+                                            l&apos;éthique de TIBUCE Africa
                                         </li>
                                     </ul>
                                 </div>
@@ -308,13 +308,13 @@ export default function TermsPage() {
                             <div className="space-y-6">
                                 <div className="bg-card border rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Contenu de TIBUCE Afrique
+                                        Contenu de TIBUCE Africa
                                     </h3>
                                     <p className="text-muted-foreground mb-4">
                                         Tous les contenus présents sur ce site
                                         (textes, images, vidéos, logos, marques)
                                         sont la propriété exclusive de TIBUCE
-                                        Afrique ou de ses partenaires et sont
+                                        Africa ou de ses partenaires et sont
                                         protégés par les lois sur la propriété
                                         intellectuelle.
                                     </p>
@@ -342,7 +342,7 @@ export default function TermsPage() {
                                         En participant aux événements TIBUCE,
                                         vous conservez la propriété de vos
                                         projets et idées. Toutefois, vous
-                                        accordez à TIBUCE Afrique le droit
+                                        accordez à TIBUCE Africa le droit
                                         d&apos;utiliser vos contributions pour
                                         la promotion de nos programmes, dans le
                                         respect de votre confidentialité.
@@ -417,7 +417,7 @@ export default function TermsPage() {
 
                             <div className="bg-card border rounded-lg p-6">
                                 <p className="text-muted-foreground mb-4">
-                                    TIBUCE Afrique se réserve le droit de
+                                    TIBUCE Africa se réserve le droit de
                                     modifier ces conditions d&apos;utilisation à
                                     tout moment. Les modifications prendront
                                     effet dès leur publication sur cette page.
@@ -460,7 +460,7 @@ export default function TermsPage() {
 
                                 <div className="bg-card border rounded-lg p-6">
                                     <h3 className="text-lg font-semibold mb-3 text-primary">
-                                        Résiliation par TIBUCE Afrique
+                                        Résiliation par TIBUCE Africa
                                     </h3>
                                     <p className="text-muted-foreground mb-4">
                                         Nous nous réservons le droit de
@@ -478,7 +478,7 @@ export default function TermsPage() {
                                         </li>
                                         <li>
                                             • Non-respect des valeurs de TIBUCE
-                                            Afrique
+                                            Africa
                                         </li>
                                         <li>
                                             • Fausses informations lors de
@@ -536,7 +536,7 @@ export default function TermsPage() {
                                         <div>
                                             <p className="font-medium">Email</p>
                                             <p className="text-sm text-muted-foreground">
-                                                contact{`@`}tibuce-afrique.org
+                                                contact{`@`}tibuce-africa.org
                                             </p>
                                         </div>
                                     </div>

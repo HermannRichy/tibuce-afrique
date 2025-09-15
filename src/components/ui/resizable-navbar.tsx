@@ -235,14 +235,17 @@ export const NavbarLogo = () => {
             href="/"
             className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
         >
-            <Image
-                src="/logo-tibuce.png"
-                alt="logo tibuce"
-                width={50}
-                height={50}
-            />
+            <div className="rounded-full overflow-hidden bg-white flex items-center justify-center w-14 h-14">
+                <Image
+                    src="/logo-tibuce.png"
+                    alt="logo tibuce"
+                    width={50}
+                    height={50}
+                    className="object-cover w-13 h-13"
+                />
+            </div>
             <span className="font-medium font-rakiby uppercase text-black dark:text-white">
-                Tibuce Afrique
+                Tibuce Africa
             </span>
         </Link>
     );

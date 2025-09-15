@@ -8,10 +8,10 @@ export function AboutSection() {
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-12 lg:w-3/5 mx-auto">
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
-                        TIBUCE AFRIQUE : Forger les Leaders de Demain
+                        TIBUCE AFRICA : Forger les Leaders de Demain
                     </h2>
                     <p className="text-sm">
-                        TIBUCE Afrique représente bien plus qu&apos;un simple
+                        TIBUCE Africa représente bien plus qu&apos;un simple
                         tournoi de business. C&apos;est une révolution dans la
                         formation entrepreneuriale africaine, conçue pour
                         identifier, développer et connecter la prochaine
@@ -42,7 +42,7 @@ export function AboutSection() {
                                 Notre Mission
                             </h3>
                             <p className="text-muted-foreground text-sm">
-                                TIBUCE Afrique révolutionne la formation
+                                TIBUCE Africa révolutionne la formation
                                 entrepreneuriale africaine. Nous identifions et
                                 développons la prochaine génération de leaders
                                 économiques du continent à travers une

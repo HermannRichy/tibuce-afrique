@@ -33,7 +33,7 @@ export function ComingSoonSection() {
                 "Partenariats avec les incubateurs locaux",
                 "Pitch sessions devant des investisseurs",
                 "Ateliers de développement personnel",
-                "Accès privilégié au réseau TIBUCE Afrique",
+                "Accès privilégié au réseau TIBUCE Africa",
             ],
             gradientFrom: "#FE8BBB",
             gradientTo: "#bc9128",
@@ -48,7 +48,7 @@ export function ComingSoonSection() {
                         Nos Prochains Événements : Rejoignez l&apos;Excellence
                     </h2>
                     <p className="text-sm">
-                        Découvrez les prochaines éditions de TIBUCE Afrique et
+                        Découvrez les prochaines éditions de TIBUCE Africa et
                         participez à la révolution entrepreneuriale qui
                         transforme le continent. Chaque événement est conçu pour
                         vous offrir une expérience unique d&apos;apprentissage,

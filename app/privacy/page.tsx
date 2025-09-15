@@ -55,7 +55,7 @@ export default function PrivacyPage() {
                                     </h2>
                                 </div>
                                 <p className="text-muted-foreground leading-relaxed">
-                                    Chez TIBUCE Afrique, nous nous engageons à
+                                    Chez TIBUCE Africa, nous nous engageons à
                                     protéger votre vie privée et vos données
                                     personnelles. Cette politique de
                                     confidentialité explique comment nous
@@ -379,7 +379,7 @@ export default function PrivacyPage() {
                                         <div>
                                             <p className="font-medium">Email</p>
                                             <p className="text-sm text-muted-foreground">
-                                                privacy@tibuce-afrique.org
+                                                privacy@tibuce-africa.org
                                             </p>
                                         </div>
                                     </div>
@@ -391,7 +391,7 @@ export default function PrivacyPage() {
                                                 Téléphone
                                             </p>
                                             <p className="text-sm text-muted-foreground">
-                                                +229 XX XX XX XX
+                                                +229 XX XX XX XX XX
                                             </p>
                                         </div>
                                     </div>

@@ -24,19 +24,19 @@ export function Footer() {
     const socialLinks = [
         {
             name: "Instagram",
-            href: "https://instagram.com/tibuce_afrique",
+            href: "https://instagram.com/tibuce_africa",
             icon: Instagram,
             color: "hover:text-pink-500",
         },
         {
             name: "LinkedIn",
-            href: "https://linkedin.com/company/tibuce-afrique",
+            href: "https://linkedin.com/company/tibuce-africa",
             icon: Linkedin,
             color: "hover:text-blue-600",
         },
         {
             name: "TikTok",
-            href: "https://tiktok.com/@tibuce_afrique",
+            href: "https://tiktok.com/@tibuce_africa",
             icon: Music,
             color: "hover:text-black dark:hover:text-white",
         },
@@ -57,13 +57,13 @@ export function Footer() {
                     <div className="lg:col-span-1">
                         <div className="mb-6">
                             <h3 className="text-2xl font-bold font-rakiby text-primary mb-4">
-                                TIBUCE AFRIQUE
+                                TIBUCE AFRICA
                             </h3>
                             <p className="text-sm text-muted-foreground leading-relaxed">
                                 Forger les leaders de demain à travers
                                 l&apos;excellence entrepreneuriale. Rejoignez la
-                                révolution qui transforme l&apos;Afrique une
-                                idée à la fois.
+                                révolution qui transforme l&apos;Africa une idée
+                                à la fois.
                             </p>
                         </div>
 
@@ -72,13 +72,13 @@ export function Footer() {
                             <div className="flex items-center gap-3 text-sm">
                                 <Mail className="h-4 w-4 text-primary" />
                                 <span className="text-muted-foreground">
-                                    contact@tibuce-afrique.org
+                                    contact@tibuce-africa.org
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
                                 <Globe className="h-4 w-4 text-primary" />
                                 <span className="text-muted-foreground">
-                                    www.tibuce-afrique.org
+                                    www.tibuce-africa.org
                                 </span>
                             </div>
                         </div>
@@ -168,8 +168,7 @@ export function Footer() {
                 <div className="container mx-auto px-4 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <div className="text-sm text-muted-foreground text-center md:text-left">
-                            © {currentYear} TIBUCE Afrique. Tous droits
-                            réservés.
+                            © {currentYear} TIBUCE Africa. Tous droits réservés.
                         </div>
 
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
