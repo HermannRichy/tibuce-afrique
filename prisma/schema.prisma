@@ -37,25 +37,28 @@ model Inscription {
   participant1BirthDate   DateTime
   participant1Gender      String   // "H" ou "F"
   participant1Education   String
-  participant1Status      String[] // Array de strings pour les statuts
+  participant1Status        String[] // Array de strings pour les statuts
+  participant1StatusOther   String?
 
   // Participant 2
-  participant2Name        String
-  participant2Phone       String
-  participant2Email       String   @unique
-  participant2BirthDate   DateTime
-  participant2Gender      String   // "H" ou "F"
-  participant2Education   String
-  participant2Status      String[] // Array de strings pour les statuts
+  participant2Name          String
+  participant2Phone         String
+  participant2Email         String   @unique
+  participant2BirthDate     DateTime
+  participant2Gender        String   // "H" ou "F"
+  participant2Education     String
+  participant2Status        String[] // Array de strings pour les statuts
+  participant2StatusOther   String?
 
   // Participant 3 (optionnel)
-  participant3Name        String?
-  participant3Phone       String?
-  participant3Email       String?  @unique
-  participant3BirthDate   DateTime?
-  participant3Gender      String?  // "H" ou "F"
-  participant3Education   String?
-  participant3Status      String[] // Array de strings pour les statuts
+  participant3Name          String?
+  participant3Phone         String?
+  participant3Email         String?  @unique
+  participant3BirthDate     DateTime?
+  participant3Gender        String?  // "H" ou "F"
+  participant3Education     String?
+  participant3Status        String[] // Array de strings pour les statuts
+  participant3StatusOther   String?
 
   // Validation
   validationDate DateTime

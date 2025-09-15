@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
             "participant2BirthDate",
             "participant2Gender",
             "participant2Education",
-            "validationDate",
             "acceptTerms",
         ];
 
@@ -55,14 +54,16 @@ export async function POST(request: NextRequest) {
         }
 
         // Validation des téléphones
-        const phoneRegex = /^(\+229|229)[0-9]{8}$/;
+        const phoneRegex = /^\+229[0-9]{8,10}$/;
         const phones = [data.participant1Phone, data.participant2Phone];
         if (data.participant3Phone) phones.push(data.participant3Phone);
 
         for (const phone of phones) {
             if (phone && !phoneRegex.test(phone)) {
                 return NextResponse.json(
-                    { error: `Numéro de téléphone invalide: ${phone}` },
+                    {
+                        error: `Numéro de téléphone invalide: ${phone}. Format attendu: +229XXXXXXXX`,
+                    },
                     { status: 400 }
                 );
             }
@@ -121,6 +122,7 @@ export async function POST(request: NextRequest) {
                 participant1Gender: data.participant1Gender,
                 participant1Education: data.participant1Education,
                 participant1Status: data.participant1Status || [],
+                participant1StatusOther: data.participant1StatusOther || null,
                 participant2Name: data.participant2Name,
                 participant2Phone: data.participant2Phone,
                 participant2Email: data.participant2Email,
@@ -128,6 +130,7 @@ export async function POST(request: NextRequest) {
                 participant2Gender: data.participant2Gender,
                 participant2Education: data.participant2Education,
                 participant2Status: data.participant2Status || [],
+                participant2StatusOther: data.participant2StatusOther || null,
                 participant3Name: data.participant3Name || null,
                 participant3Phone: data.participant3Phone || null,
                 participant3Email: data.participant3Email || null,
@@ -137,7 +140,8 @@ export async function POST(request: NextRequest) {
                 participant3Gender: data.participant3Gender || null,
                 participant3Education: data.participant3Education || null,
                 participant3Status: data.participant3Status || [],
-                validationDate: new Date(data.validationDate),
+                participant3StatusOther: data.participant3StatusOther || null,
+                validationDate: new Date(),
                 acceptTerms: data.acceptTerms,
             },
         });

@@ -283,7 +283,11 @@
                         <div class="field">
                             <span class="field-label">Statut :</span>
                             <span class="field-value"
-                                >{{participant1Status}}</span
+                                >{{participant1Status}} {{#if
+                                participant1StatusOther}} <br /><em
+                                    >Précision : {{participant1StatusOther}}</em
+                                >
+                                {{/if}}</span
                             >
                         </div>
                     </div>

@@ -62,8 +62,12 @@ interface FormData {
     participant3Status?: string[];
 
     // Validation
-    validationDate: string;
     acceptTerms: boolean;
+
+    // Statut "Autre" pour chaque participant
+    participant1StatusOther?: string;
+    participant2StatusOther?: string;
+    participant3StatusOther?: string;
 }
 
 export default function InscriptionPage() {
@@ -121,7 +125,7 @@ export default function InscriptionPage() {
         "Autre",
     ];
 
-    const trackOptions = ["Business Game", "Challenge", "Les deux"];
+    const trackOptions = ["Business Game", "Challenge"];
 
     const countries = [
         "Bénin",
@@ -141,6 +145,14 @@ export default function InscriptionPage() {
         "Ouganda",
         "Rwanda",
         "Burundi",
+        "Autre",
+    ];
+
+    const editions = [
+        "2025 / Cotonou",
+        "2025 / Lomé",
+        "2026 / Cotonou",
+        "2026 / Lomé",
         "Autre",
     ];
 
@@ -175,6 +187,7 @@ export default function InscriptionPage() {
                     data.participant3Status?.join(", ") || "Non applicable",
                 timestamp: new Date().toLocaleString("fr-FR"),
                 inscriptionId: inscriptionId,
+                validationDate: new Date().toLocaleString("fr-FR"),
             };
 
             // Envoyer la notification à l'équipe TIBUCE
@@ -185,13 +198,13 @@ export default function InscriptionPage() {
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
 
-            // Envoyer la confirmation au participant
+            /* Envoyer la confirmation au participant
             await emailjs.send(
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONFIRMATION!,
                 emailData,
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            );
+            ); */
 
             toast.success(
                 "Inscription envoyée avec succès ! Vous recevrez une confirmation par email."
@@ -320,17 +333,24 @@ export default function InscriptionPage() {
                                     <label className="block text-sm font-medium mb-2">
                                         Édition concernée *
                                     </label>
-                                    <Input
+                                    <select
                                         {...register("edition", {
                                             required: "L'édition est requise",
                                         })}
-                                        placeholder="Ex: 2025 / Cotonou"
-                                        className={
-                                            errors.edition
-                                                ? "border-destructive"
-                                                : ""
-                                        }
-                                    />
+                                        className="w-full px-3 py-2 border border-input rounded-md bg-background"
+                                    >
+                                        <option value="">
+                                            Sélectionnez une édition
+                                        </option>
+                                        {editions.map((edition) => (
+                                            <option
+                                                key={edition}
+                                                value={edition}
+                                            >
+                                                {edition}
+                                            </option>
+                                        ))}
+                                    </select>
                                     {errors.edition && (
                                         <p className="text-destructive text-sm mt-1">
                                             {errors.edition.message}
@@ -602,9 +622,9 @@ export default function InscriptionPage() {
                                         {...register("participant1Phone", {
                                             required: "Le téléphone est requis",
                                             pattern: {
-                                                value: /^(\+229|229)[0-9]{8}$/,
+                                                value: /^\+229[0-9]{8,10}$/,
                                                 message:
-                                                    "Format: +229XXXXXXXX ou 229XXXXXXXX",
+                                                    "Format: +229XXXXXXXX (8 à 10 chiffres)",
                                             },
                                         })}
                                         placeholder="+229XXXXXXXX"
@@ -758,6 +778,19 @@ export default function InscriptionPage() {
                                             </label>
                                         ))}
                                     </div>
+                                    {watch("participant1Status").includes(
+                                        "Autre"
+                                    ) && (
+                                        <div className="mt-3">
+                                            <Input
+                                                {...register(
+                                                    "participant1StatusOther"
+                                                )}
+                                                placeholder="Précisez votre statut"
+                                                className="w-full"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </section>
@@ -802,9 +835,9 @@ export default function InscriptionPage() {
                                         {...register("participant2Phone", {
                                             required: "Le téléphone est requis",
                                             pattern: {
-                                                value: /^(\+229|229)[0-9]{8}$/,
+                                                value: /^\+229[0-9]{8,10}$/,
                                                 message:
-                                                    "Format: +229XXXXXXXX ou 229XXXXXXXX",
+                                                    "Format: +229XXXXXXXX (8 à 10 chiffres)",
                                             },
                                         })}
                                         placeholder="+229XXXXXXXX"
@@ -958,6 +991,19 @@ export default function InscriptionPage() {
                                             </label>
                                         ))}
                                     </div>
+                                    {watch("participant2Status").includes(
+                                        "Autre"
+                                    ) && (
+                                        <div className="mt-3">
+                                            <Input
+                                                {...register(
+                                                    "participant2StatusOther"
+                                                )}
+                                                placeholder="Précisez votre statut"
+                                                className="w-full"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </section>
@@ -1098,6 +1144,19 @@ export default function InscriptionPage() {
                                                 </label>
                                             ))}
                                         </div>
+                                        {watch("participant3Status")?.includes(
+                                            "Autre"
+                                        ) && (
+                                            <div className="mt-3">
+                                                <Input
+                                                    {...register(
+                                                        "participant3StatusOther"
+                                                    )}
+                                                    placeholder="Précisez votre statut"
+                                                    className="w-full"
+                                                />
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </section>
@@ -1113,29 +1172,6 @@ export default function InscriptionPage() {
                             </div>
 
                             <div className="space-y-6">
-                                <div>
-                                    <label className="block text-sm font-medium mb-2">
-                                        Date de validation *
-                                    </label>
-                                    <Input
-                                        type="date"
-                                        {...register("validationDate", {
-                                            required:
-                                                "La date de validation est requise",
-                                        })}
-                                        className={
-                                            errors.validationDate
-                                                ? "border-destructive"
-                                                : ""
-                                        }
-                                    />
-                                    {errors.validationDate && (
-                                        <p className="text-destructive text-sm mt-1">
-                                            {errors.validationDate.message}
-                                        </p>
-                                    )}
-                                </div>
-
                                 <div className="flex items-start gap-3">
                                     <input
                                         type="checkbox"
