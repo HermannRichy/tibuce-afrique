@@ -72,13 +72,13 @@ export function Footer() {
                             <div className="flex items-center gap-3 text-sm">
                                 <Mail className="h-4 w-4 text-primary" />
                                 <span className="text-muted-foreground">
-                                    contact@tibuce-africa.org
+                                    contact@tibuceafrica.com
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
                                 <Globe className="h-4 w-4 text-primary" />
                                 <span className="text-muted-foreground">
-                                    www.tibuce-africa.org
+                                    www.tibuceafrica.com
                                 </span>
                             </div>
                         </div>

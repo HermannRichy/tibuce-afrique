@@ -122,7 +122,7 @@ export function ContactSection() {
                                             Email officiel
                                         </p>
                                         <p className="text-primary font-medium">
-                                            contact@tibuce-africa.org
+                                            contact@tibuceafrica.com
                                         </p>
                                         <p className="text-sm text-muted-foreground mt-1">
                                             Réponse garantie sous 48h

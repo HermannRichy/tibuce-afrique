@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: "/",
             disallow: ["/api/", "/_next/", "/admin/"],
         },
-        sitemap: "https://tibuce-africa.org/sitemap.xml",
+        sitemap: "https://tibuceafrica.com/sitemap.xml",
     };
 }

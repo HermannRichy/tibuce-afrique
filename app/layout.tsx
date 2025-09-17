@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         "carrière",
         "professionnel",
     ],
-    authors: [{ name: "TIBUCE Africa", url: "https://tibuce-africa.org" }],
+    authors: [{ name: "TIBUCE Africa", url: "https://tibuceafrica.com" }],
     creator: "TIBUCE Africa",
     publisher: "TIBUCE Africa",
     robots: {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
         title: "TIBUCE AFRICA - L'Avenir du Business se Joue Ici",
         description:
             "Rejoignez la révolution entrepreneuriale africaine. TIBUCE Africa prépare la nouvelle génération de leaders économiques du continent à travers des défis business concrets et un réseau professionnel solide.",
-        url: "https://tibuce-africa.org",
+        url: "https://tibuceafrica.com",
         siteName: "TIBUCE Africa",
         images: [
             {
@@ -85,10 +85,10 @@ export const metadata: Metadata = {
         images: ["/logo-tibuce.jpeg"],
     },
     alternates: {
-        canonical: "https://tibuce-africa.org",
+        canonical: "https://tibuceafrica.com",
         languages: {
-            "fr-FR": "https://tibuce-africa.org",
-            "en-US": "https://tibuce-africa.org/en",
+            "fr-FR": "https://tibuceafrica.com",
+            "en-US": "https://tibuceafrica.com/en",
         },
     },
     category: "Éducation et Formation",
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
     },
     appLinks: {
         web: {
-            url: "https://tibuce-africa.org",
+            url: "https://tibuceafrica.com",
             should_fallback: true,
         },
     },
