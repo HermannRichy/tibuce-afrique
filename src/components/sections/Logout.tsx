@@ -29,8 +29,9 @@ export default function Logout() {
             await logOut();
             toast.success("Déconnexion réussie !");
             router.push("/");
-        } catch (err: any) {
-            const errorMessage = err.message || "Une erreur est survenue";
+        } catch (err: unknown) {
+            const errorMessage =
+                err instanceof Error ? err.message : "Une erreur est survenue";
             setError(errorMessage);
             toast.error(errorMessage);
         } finally {

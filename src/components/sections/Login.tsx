@@ -33,8 +33,9 @@ export default function Login() {
             await logIn(email, password);
             toast.success("Connexion réussie !");
             router.push("/dashboard");
-        } catch (err: any) {
-            const errorMessage = err.message || "Une erreur est survenue";
+        } catch (err: unknown) {
+            const errorMessage =
+                err instanceof Error ? err.message : "Une erreur est survenue";
             setError(errorMessage);
             toast.error(errorMessage);
         } finally {

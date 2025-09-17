@@ -16,40 +16,26 @@ import {
     Phone,
     Mail,
     Building,
-    CreditCard,
-    FileText,
     User,
-    GraduationCap,
 } from "lucide-react";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 import { InscriptionSummary } from "@/src/types/inscription";
 
-interface InscriptionDetailsProps {
+interface InscriptionSummaryDetailsProps {
     inscription: InscriptionSummary | null;
     open: boolean;
     onClose: () => void;
 }
 
-export default function InscriptionDetails({
+export default function InscriptionSummaryDetails({
     inscription,
     open,
     onClose,
-}: InscriptionDetailsProps) {
+}: InscriptionSummaryDetailsProps) {
     if (!inscription) return null;
 
-    const formatDate = (dateString: string | null | undefined) => {
-        if (!dateString) return "Non renseigné";
-        try {
-            return format(new Date(dateString), "dd/MM/yyyy", { locale: fr });
-        } catch (error) {
-            console.error("Erreur de formatage de date:", error);
-            return "Date invalide";
-        }
-    };
-
-    const formatDateTime = (dateString: string | null | undefined) => {
-        if (!dateString) return "Non renseigné";
+    const formatDateTime = (dateString: string) => {
         try {
             return format(new Date(dateString), "dd/MM/yyyy HH:mm", {
                 locale: fr,
@@ -165,34 +151,6 @@ export default function InscriptionDetails({
                                         {inscription.participant1Phone}
                                     </p>
                                 </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Date de naissance
-                                    </label>
-                                    <p className="text-sm flex items-center gap-2">
-                                        <Calendar className="h-4 w-4" />
-                                        {formatDate(
-                                            inscription.participant1BirthDate
-                                        )}
-                                    </p>
-                                </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Sexe
-                                    </label>
-                                    <p className="text-sm">
-                                        {inscription.participant1Gender}
-                                    </p>
-                                </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Niveau d&apos;études
-                                    </label>
-                                    <p className="text-sm flex items-center gap-2">
-                                        <GraduationCap className="h-4 w-4" />
-                                        {inscription.participant1Education}
-                                    </p>
-                                </div>
                                 <div className="md:col-span-2">
                                     <label className="text-sm font-medium text-muted-foreground">
                                         Statut actuel
@@ -206,14 +164,6 @@ export default function InscriptionDetails({
                                             emptyMessage="Aucun statut renseigné"
                                         />
                                     </div>
-                                    {inscription.participant1StatusOther && (
-                                        <p className="text-sm text-muted-foreground mt-1">
-                                            Précision :{" "}
-                                            {
-                                                inscription.participant1StatusOther
-                                            }
-                                        </p>
-                                    )}
                                 </div>
                             </div>
                         </div>
@@ -251,34 +201,6 @@ export default function InscriptionDetails({
                                         {inscription.participant2Phone}
                                     </p>
                                 </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Date de naissance
-                                    </label>
-                                    <p className="text-sm flex items-center gap-2">
-                                        <Calendar className="h-4 w-4" />
-                                        {formatDate(
-                                            inscription.participant2BirthDate
-                                        )}
-                                    </p>
-                                </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Sexe
-                                    </label>
-                                    <p className="text-sm">
-                                        {inscription.participant2Gender}
-                                    </p>
-                                </div>
-                                <div>
-                                    <label className="text-sm font-medium text-muted-foreground">
-                                        Niveau d&apos;études
-                                    </label>
-                                    <p className="text-sm flex items-center gap-2">
-                                        <GraduationCap className="h-4 w-4" />
-                                        {inscription.participant2Education}
-                                    </p>
-                                </div>
                                 <div className="md:col-span-2">
                                     <label className="text-sm font-medium text-muted-foreground">
                                         Statut actuel
@@ -292,14 +214,6 @@ export default function InscriptionDetails({
                                             emptyMessage="Aucun statut renseigné"
                                         />
                                     </div>
-                                    {inscription.participant2StatusOther && (
-                                        <p className="text-sm text-muted-foreground mt-1">
-                                            Précision :{" "}
-                                            {
-                                                inscription.participant2StatusOther
-                                            }
-                                        </p>
-                                    )}
                                 </div>
                             </div>
                         </div>
@@ -338,35 +252,6 @@ export default function InscriptionDetails({
                                             {inscription.participant3Phone}
                                         </p>
                                     </div>
-                                    <div>
-                                        <label className="text-sm font-medium text-muted-foreground">
-                                            Date de naissance
-                                        </label>
-                                        <p className="text-sm flex items-center gap-2">
-                                            <Calendar className="h-4 w-4" />
-                                            {inscription.participant3BirthDate &&
-                                                formatDate(
-                                                    inscription.participant3BirthDate
-                                                )}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <label className="text-sm font-medium text-muted-foreground">
-                                            Sexe
-                                        </label>
-                                        <p className="text-sm">
-                                            {inscription.participant3Gender}
-                                        </p>
-                                    </div>
-                                    <div>
-                                        <label className="text-sm font-medium text-muted-foreground">
-                                            Niveau d&apos;études
-                                        </label>
-                                        <p className="text-sm flex items-center gap-2">
-                                            <GraduationCap className="h-4 w-4" />
-                                            {inscription.participant3Education}
-                                        </p>
-                                    </div>
                                     <div className="md:col-span-2">
                                         <label className="text-sm font-medium text-muted-foreground">
                                             Statut actuel
@@ -380,14 +265,6 @@ export default function InscriptionDetails({
                                                 emptyMessage="Aucun statut renseigné"
                                             />
                                         </div>
-                                        {inscription.participant3StatusOther && (
-                                            <p className="text-sm text-muted-foreground mt-1">
-                                                Précision :{" "}
-                                                {
-                                                    inscription.participant3StatusOther
-                                                }
-                                            </p>
-                                        )}
                                     </div>
                                 </div>
                             </div>

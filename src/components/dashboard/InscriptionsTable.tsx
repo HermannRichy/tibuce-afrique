@@ -41,41 +41,18 @@ import {
 import { toast } from "sonner";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-
-interface Inscription {
-    id: number;
-    teamName: string;
-    country: string;
-    edition: string;
-    organization: string;
-    numberOfMembers: number;
-    participant1Name: string;
-    participant1Email: string;
-    participant1Phone: string;
-    participant2Name: string;
-    participant2Email: string;
-    participant2Phone: string;
-    participant3Name?: string;
-    participant3Email?: string;
-    participant3Phone?: string;
-    selectedTrack?: string[];
-    participant1Status?: string[];
-    participant2Status?: string[];
-    participant3Status?: string[];
-    createdAt: string;
-    updatedAt: string;
-}
+import { InscriptionSummary } from "@/src/types/inscription";
 
 interface InscriptionsTableProps {
-    onEdit: (inscription: Inscription) => void;
-    onView: (inscription: Inscription) => void;
+    onEdit: (inscription: InscriptionSummary) => void;
+    onView: (inscription: InscriptionSummary) => void;
 }
 
 export default function InscriptionsTable({
     onEdit,
     onView,
 }: InscriptionsTableProps) {
-    const [inscriptions, setInscriptions] = useState<Inscription[]>([]);
+    const [inscriptions, setInscriptions] = useState<InscriptionSummary[]>([]);
     const [loading, setLoading] = useState(true);
     const [deleteId, setDeleteId] = useState<number | null>(null);
 

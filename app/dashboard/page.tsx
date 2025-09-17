@@ -3,7 +3,7 @@
 import { Footer } from "@/src/components/sections/Footer";
 import ProtectedRoute from "@/src/components/auth/ProtectedRoute";
 import InscriptionsTable from "@/src/components/dashboard/InscriptionsTable";
-import InscriptionDetails from "@/src/components/dashboard/InscriptionDetails";
+import InscriptionSummaryDetails from "@/src/components/dashboard/InscriptionSummaryDetails";
 import {
     Card,
     CardContent,
@@ -21,17 +21,19 @@ import {
 import { User, Settings, BarChart3, LogOut, List, Plus } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { InscriptionSummary } from "@/src/types/inscription";
 
 export default function DashboardPage() {
-    const [selectedInscription, setSelectedInscription] = useState<any>(null);
+    const [selectedInscription, setSelectedInscription] =
+        useState<InscriptionSummary | null>(null);
     const [showDetails, setShowDetails] = useState(false);
 
-    const handleViewInscription = (inscription: any) => {
+    const handleViewInscription = (inscription: InscriptionSummary) => {
         setSelectedInscription(inscription);
         setShowDetails(true);
     };
 
-    const handleEditInscription = (inscription: any) => {
+    const handleEditInscription = (inscription: InscriptionSummary) => {
         // TODO: Implémenter l'édition
         console.log("Éditer l'inscription:", inscription);
     };
@@ -258,7 +260,7 @@ export default function DashboardPage() {
             <Footer />
 
             {/* Modal de détails */}
-            <InscriptionDetails
+            <InscriptionSummaryDetails
                 inscription={selectedInscription}
                 open={showDetails}
                 onClose={() => setShowDetails(false)}
