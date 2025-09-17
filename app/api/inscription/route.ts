@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
                 participant3Email: data.participant3Email || "N/A",
                 participant3BirthDate: data.participant3BirthDate
                     ? new Date(data.participant3BirthDate)
-                    : "N/A",
+                    : new Date(),
                 participant3Gender: data.participant3Gender || "N/A",
                 participant3Education: data.participant3Education || "N/A",
                 participant3Status: data.participant3Status || [],
