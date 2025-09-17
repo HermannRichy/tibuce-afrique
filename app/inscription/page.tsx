@@ -176,18 +176,57 @@ export default function InscriptionPage() {
             const result = await response.json();
             const inscriptionId = result.id;
 
-            // Préparer les données pour les emails
+            // Préparer les données pour les emails - format simple pour EmailJS
             const emailData = {
-                ...data,
+                teamName: data.teamName,
+                country: data.country,
+                edition: data.edition,
+                organization: data.organization,
+                organizationOther: data.organizationOther || "",
                 numberOfMembers: data.numberOfMembers,
-                selectedTrack: data.selectedTrack.join(", "),
-                participant1Status: data.participant1Status.join(", "),
-                participant2Status: data.participant2Status.join(", "),
+                teamRepresentative: data.teamRepresentative,
+                projectTitle: data.projectTitle || "",
+                projectDescription: data.projectDescription || "",
+                selectedTrack: Array.isArray(data.selectedTrack)
+                    ? data.selectedTrack.join(", ")
+                    : data.selectedTrack,
+                paymentMethod: data.paymentMethod,
+                paymentMethodOther: data.paymentMethodOther || "",
+                paymentReference: data.paymentReference,
+                participant1Name: data.participant1Name,
+                participant1Email: data.participant1Email,
+                participant1Phone: data.participant1Phone,
+                participant1BirthDate: data.participant1BirthDate,
+                participant1Gender: data.participant1Gender,
+                participant1Education: data.participant1Education,
+                participant1Status: Array.isArray(data.participant1Status)
+                    ? data.participant1Status.join(", ")
+                    : data.participant1Status,
+                participant1StatusOther: data.participant1StatusOther || "",
+                participant2Name: data.participant2Name,
+                participant2Email: data.participant2Email,
+                participant2Phone: data.participant2Phone,
+                participant2BirthDate: data.participant2BirthDate,
+                participant2Gender: data.participant2Gender,
+                participant2Education: data.participant2Education,
+                participant2Status: Array.isArray(data.participant2Status)
+                    ? data.participant2Status.join(", ")
+                    : data.participant2Status,
+                participant3Name: data.participant3Name || "",
+                participant3Email: data.participant3Email || "",
+                participant3Phone: data.participant3Phone || "",
+                participant3BirthDate: data.participant3BirthDate || "",
+                participant3Gender: data.participant3Gender || "",
+                participant3Education: data.participant3Education || "",
                 participant3Status:
-                    data.participant3Status?.join(", ") || "Non applicable",
+                    data.participant3Status &&
+                    Array.isArray(data.participant3Status)
+                        ? data.participant3Status.join(", ")
+                        : data.participant3Status || "",
+                validationDate: new Date().toLocaleString("fr-FR"),
+                acceptTerms: data.acceptTerms ? "Oui" : "Non",
                 timestamp: new Date().toLocaleString("fr-FR"),
                 inscriptionId: inscriptionId,
-                validationDate: new Date().toLocaleString("fr-FR"),
             };
 
             // Envoyer la notification à l'équipe TIBUCE
@@ -197,14 +236,6 @@ export default function InscriptionPage() {
                 emailData,
                 process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
             );
-
-            /* Envoyer la confirmation au participant
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONFIRMATION!,
-                emailData,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            ); */
 
             toast.success(
                 "Inscription envoyée avec succès ! Vous recevrez une confirmation par email."
