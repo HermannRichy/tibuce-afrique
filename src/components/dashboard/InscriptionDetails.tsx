@@ -16,8 +16,6 @@ import {
     Phone,
     Mail,
     Building,
-    CreditCard,
-    FileText,
     User,
     GraduationCap,
 } from "lucide-react";
