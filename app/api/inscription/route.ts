@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
                 participant3Email: data.participant3Email || "N/A",
                 participant3BirthDate: data.participant3BirthDate
                     ? new Date(data.participant3BirthDate)
-                    : new Date(),
+                    : "N/A",
                 participant3Gender: data.participant3Gender || "N/A",
                 participant3Education: data.participant3Education || "N/A",
                 participant3Status: data.participant3Status || [],
@@ -165,13 +165,6 @@ export async function POST(request: NextRequest) {
 export async function GET() {
     try {
         const inscriptions = await prisma.inscription.findMany({
-            select: {
-                id: true,
-                teamName: true,
-                country: true,
-                edition: true,
-                createdAt: true,
-            },
             orderBy: {
                 createdAt: "desc",
             },

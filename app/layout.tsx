@@ -3,8 +3,10 @@ import "./globals.css";
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/src/components/ui/theme-provider";
 import { rakiby, poppins } from "./fonts";
+import { AuthContextProvider } from "@/context/AuthContext";
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://tibuce-africa.org"),
     title: {
         default: "TIBUCE AFRICA - L'Avenir du Business se Joue Ici",
         template: "%s | TIBUCE AFRICA",
@@ -145,15 +147,17 @@ export default function RootLayout({
             <body
                 className={`${rakiby.variable} ${poppins.variable} antialiased font-poppins`}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="dark"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    {children}
-                    <Toaster />
-                </ThemeProvider>
+                <AuthContextProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="dark"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        {children}
+                        <Toaster />
+                    </ThemeProvider>
+                </AuthContextProvider>
             </body>
         </html>
     );
