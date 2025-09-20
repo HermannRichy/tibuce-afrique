@@ -165,13 +165,6 @@ export async function POST(request: NextRequest) {
 export async function GET() {
     try {
         const inscriptions = await prisma.inscription.findMany({
-            select: {
-                id: true,
-                teamName: true,
-                country: true,
-                edition: true,
-                createdAt: true,
-            },
             orderBy: {
                 createdAt: "desc",
             },

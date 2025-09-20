@@ -60,7 +60,7 @@ export default function DashboardPage() {
                 <div className="container mx-auto px-4 py-16">
                     <div className="max-w-6xl mx-auto">
                         <Tabs defaultValue="overview" className="space-y-6">
-                            <TabsList className="grid w-full grid-cols-3">
+                            <TabsList className="grid w-full grid-cols-2">
                                 <TabsTrigger
                                     value="overview"
                                     className="flex items-center gap-2"
@@ -74,13 +74,6 @@ export default function DashboardPage() {
                                 >
                                     <List className="h-4 w-4" />
                                     Inscriptions
-                                </TabsTrigger>
-                                <TabsTrigger
-                                    value="settings"
-                                    className="flex items-center gap-2"
-                                >
-                                    <Settings className="h-4 w-4" />
-                                    Paramètres
                                 </TabsTrigger>
                             </TabsList>
 
@@ -206,52 +199,6 @@ export default function DashboardPage() {
                                     onEdit={handleEditInscription}
                                     onView={handleViewInscription}
                                 />
-                            </TabsContent>
-
-                            {/* Paramètres */}
-                            <TabsContent value="settings" className="space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-bold font-rakiby text-primary mb-4">
-                                        Paramètres
-                                    </h2>
-                                    <p className="text-muted-foreground">
-                                        Configurez vos préférences et paramètres
-                                        de compte
-                                    </p>
-                                </div>
-                                <Card>
-                                    <CardHeader>
-                                        <CardTitle>
-                                            Paramètres du compte
-                                        </CardTitle>
-                                        <CardDescription>
-                                            Gérez vos informations de connexion
-                                            et préférences
-                                        </CardDescription>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <div className="space-y-4">
-                                            <Button
-                                                variant="outline"
-                                                className="w-full"
-                                            >
-                                                Modifier le mot de passe
-                                            </Button>
-                                            <Button
-                                                variant="outline"
-                                                className="w-full"
-                                            >
-                                                Modifier l&apos;email
-                                            </Button>
-                                            <Button
-                                                variant="outline"
-                                                className="w-full"
-                                            >
-                                                Préférences de notification
-                                            </Button>
-                                        </div>
-                                    </CardContent>
-                                </Card>
                             </TabsContent>
                         </Tabs>
                     </div>

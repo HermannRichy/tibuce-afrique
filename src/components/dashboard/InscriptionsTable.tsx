@@ -29,8 +29,6 @@ import {
 } from "@/src/components/ui/alert-dialog";
 import {
     MoreHorizontal,
-    Edit,
-    Trash2,
     Eye,
     Calendar,
     MapPin,
@@ -240,23 +238,6 @@ export default function InscriptionsTable({
                                             >
                                                 <Eye className="mr-2 h-4 w-4" />
                                                 Voir
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem
-                                                onClick={() =>
-                                                    onEdit(inscription)
-                                                }
-                                            >
-                                                <Edit className="mr-2 h-4 w-4" />
-                                                Modifier
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem
-                                                onClick={() =>
-                                                    setDeleteId(inscription.id)
-                                                }
-                                                className="text-destructive"
-                                            >
-                                                <Trash2 className="mr-2 h-4 w-4" />
-                                                Supprimer
                                             </DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu>
