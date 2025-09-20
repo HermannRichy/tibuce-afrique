@@ -33,11 +33,6 @@ export default function DashboardPage() {
         setShowDetails(true);
     };
 
-    const handleEditInscription = (inscription: InscriptionSummary) => {
-        // TODO: Implémenter l'édition
-        console.log("Éditer l'inscription:", inscription);
-    };
-
     return (
         <ProtectedRoute>
             <div className="min-h-screen bg-background">
@@ -196,7 +191,6 @@ export default function DashboardPage() {
                                 </div>
 
                                 <InscriptionsTable
-                                    onEdit={handleEditInscription}
                                     onView={handleViewInscription}
                                 />
                             </TabsContent>

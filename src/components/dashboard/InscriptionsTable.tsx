@@ -42,14 +42,10 @@ import { fr } from "date-fns/locale";
 import { InscriptionSummary } from "@/src/types/inscription";
 
 interface InscriptionsTableProps {
-    onEdit: (inscription: InscriptionSummary) => void;
     onView: (inscription: InscriptionSummary) => void;
 }
 
-export default function InscriptionsTable({
-    onEdit,
-    onView,
-}: InscriptionsTableProps) {
+export default function InscriptionsTable({ onView }: InscriptionsTableProps) {
     const [inscriptions, setInscriptions] = useState<InscriptionSummary[]>([]);
     const [loading, setLoading] = useState(true);
     const [deleteId, setDeleteId] = useState<number | null>(null);
