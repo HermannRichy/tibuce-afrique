@@ -12,35 +12,17 @@ export function PartnersSection() {
             category: "Technologie"
         },
         {
-            name: "Partenaire 2",
-            logo: "/partners/partner-2.png",
-            website: "#",
-            category: "Finance"
-        },
-        {
-            name: "Partenaire 3",
-            logo: "/partners/partner-3.png",
-            website: "#",
-            category: "Éducation"
-        },
-        {
-            name: "Partenaire 4",
-            logo: "/partners/partner-4.png",
+            name: "AFRONEX QUANTUM ",
+            logo: "/partners/logo AFRONEX QUANTUM.png",
             website: "#",
             category: "Entrepreneuriat"
         },
         {
-            name: "Partenaire 5",
-            logo: "/partners/partner-5.png",
+            name: "ONG DAFA",
+            logo: "/partners/logo ONG DAFA.png",
             website: "#",
             category: "Innovation"
         },
-        {
-            name: "Partenaire 6",
-            logo: "/partners/partner-6.png",
-            website: "#",
-            category: "Développement"
-        }
     ];
 
     return (
