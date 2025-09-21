@@ -18,6 +18,7 @@ export function Footer() {
         { name: "À propos", href: "#about" },
         { name: "Événements", href: "#coming" },
         { name: "Processus", href: "#process" },
+        { name: "Partenaires", href: "#partners" },
         { name: "Contact", href: "#contact" },
     ];
 
