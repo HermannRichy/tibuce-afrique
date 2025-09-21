@@ -7,7 +7,7 @@ export function PartnersSection() {
     const partners = [
         {
             name: "Digital Innovation",
-            logo: "/partners/digital-innovation.png",
+            logo: "/partners/logo Digital Innovation.png",
             website: "https://digitalinnovation.bj",
             category: "Technologie"
         },
@@ -49,7 +49,7 @@ export function PartnersSection() {
                             className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 w-80 h-80 relative overflow-hidden"
                         >
                             {/* Effet de reflet brillant au survol */}
-                            <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
+                            <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
                             <div className="relative w-32 h-32 mb-6 overflow-hidden rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-6 shadow-lg group-hover:shadow-2xl group-hover:bg-white/30 transition-all duration-300">
                                 <Image
                                     src={partner.logo}
