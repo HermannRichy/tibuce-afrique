@@ -4,6 +4,7 @@ import { Footer } from "@/src/components/sections/Footer";
 import { AboutSection } from "@/src/components/sections/About";
 import { ComingSoonSection } from "@/src/components/sections/ComingSoon";
 import { ProcessSection } from "@/src/components/sections/Process";
+import { PartnersSection } from "@/src/components/sections/Partners";
 
 export default function Home() {
     return (
@@ -12,6 +13,7 @@ export default function Home() {
             <AboutSection />
             <ComingSoonSection />
             <ProcessSection />
+            <PartnersSection />
             <ContactSection />
             <Footer />
         </>
