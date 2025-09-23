@@ -6,10 +6,10 @@ export function PartnersSection() {
     // Données des partenaires - vous pouvez les modifier selon vos besoins
     const partners = [
         {
-            name: "Digital Innovation",
-            logo: "/partners/logo Digital Innovation.png",
-            website: "https://digitalinnovation.bj",
-            category: "Technologie"
+            name: "SCIADO Partenaires",
+            logo: "/partners/Sciado partenaires.png",
+            website: "https://sciado.fr/",
+            category: "Formation"
         },
         {
             name: "AFRONEX QUANTUM ",
@@ -42,11 +42,14 @@ export function PartnersSection() {
                 </div>
 
                 {/* Grille des partenaires - optimisée pour 3 partenaires */}
-                <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
+                <div className="flex justify-center items-center gap-8 lg:gap-12">
                     {partners.map((partner, index) => (
-                        <div
+                        <a
                             key={index}
-                            className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 w-80 h-80 relative overflow-hidden"
+                            href={partner.website}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 w-80 h-80 lg:w-96 lg:h-96 relative overflow-hidden cursor-pointer"
                         >
                             {/* Effet de reflet brillant au survol */}
                             <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
@@ -80,7 +83,7 @@ export function PartnersSection() {
                             >
                                 {partner.category}
                             </Badge>
-                        </div>
+                        </a>
                     ))}
                 </div>
 
