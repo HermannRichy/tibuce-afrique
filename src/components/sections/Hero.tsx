@@ -29,6 +29,10 @@ export function Hero() {
             name: "Comment participer ?",
             link: "#process",
         },
+        {
+            name: "Contact",
+            link: "#contact",
+        },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,8 +45,11 @@ export function Hero() {
                     <NavbarLogo />
                     <NavItems items={navItems} />
                     <div className="flex items-center gap-4">
-                        <NavbarButton href="#contact" variant="secondary">
-                            Contact
+                        <NavbarButton
+                            href="https://www.onparticipe.fr/c/0MxI1Ykz"
+                            variant="secondary"
+                        >
+                            Je soutiens
                         </NavbarButton>
                         <NavbarButton href="/inscription" variant="primary">
                             Participer
@@ -78,11 +85,11 @@ export function Hero() {
                         ))}
                         <div className="flex w-full flex-col gap-4">
                             <NavbarButton
-                                href="#contact"
+                                href="https://www.onparticipe.fr/c/0MxI1Ykz"
                                 variant="primary"
                                 className="w-full"
                             >
-                                Contact
+                                Je soutiens
                             </NavbarButton>
                             <NavbarButton
                                 href="/inscription"
