@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Badge } from "@/src/components/ui/badge";
+import { MagicCard } from "@/src/components/magicui/magic-card";
 
 export function PartnersSection() {
     // Données des partenaires - vous pouvez les modifier selon vos besoins
@@ -23,6 +24,18 @@ export function PartnersSection() {
             website: "#",
             category: "Innovation"
         },
+        {
+            name: "FARAJ & CIE",
+            logo: "/partners/logo FARAJ & CIE.png",
+            website: "https://www.facebook.com/FarajCie/",
+            category: "Finance"
+        },
+        {
+            name: "KABOWD",
+            logo: "/partners/logo KABOWD.png",
+            website: "#",
+            category: "Technologie"
+        },
     ];
 
     return (
@@ -41,49 +54,47 @@ export function PartnersSection() {
                     </p>
                 </div>
 
-                {/* Grille des partenaires - optimisée pour 3 partenaires */}
-                <div className="flex justify-center items-center gap-8 lg:gap-12">
+                {/* Grille responsive sans défilement horizontal, toutes les cartes visibles */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8">
                     {partners.map((partner, index) => (
-                        <a
-                            key={index}
-                            href={partner.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 w-80 h-80 lg:w-96 lg:h-96 relative overflow-hidden cursor-pointer"
-                        >
-                            {/* Effet de reflet brillant au survol */}
-                            <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
-                            <div className="relative w-32 h-32 mb-6 overflow-hidden rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-6 shadow-lg group-hover:shadow-2xl group-hover:bg-white/30 transition-all duration-300">
-                                <Image
-                                    src={partner.logo}
-                                    alt={`Logo ${partner.name}`}
-                                    fill
-                                    className="object-contain group-hover:scale-110 transition-transform duration-500"
-                                    onError={(e) => {
-                                        // Fallback en cas d'image manquante
-                                        const target = e.target as HTMLImageElement;
-                                        target.style.display = 'none';
-                                        const parent = target.parentElement;
-                                        if (parent) {
-                                            parent.innerHTML = `
-                                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">
-                                                    ${partner.name}
-                                                </div>
-                                            `;
-                                        }
-                                    }}
-                                />
-                            </div>
-                            <h3 className="text-lg font-bold text-center mb-3 group-hover:text-primary transition-colors font-rakiby">
-                                {partner.name}
-                            </h3>
-                            <Badge
-                                variant="secondary"
-                                className="text-sm px-4 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                        <MagicCard key={index} className="rounded-2xl">
+                            <a
+                                href={partner.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 w-full h-72 lg:h-72 relative overflow-hidden cursor-pointer"
                             >
-                                {partner.category}
-                            </Badge>
-                        </a>
+                                {/* Effet de reflet brillant au survol */}
+                                <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
+                                <div className="relative w-32 h-32 mb-6 overflow-hidden rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-6 shadow-lg group-hover:shadow-2xl group-hover:bg-white/30 transition-all duration-300">
+                                    <Image
+                                        src={partner.logo}
+                                        alt={`Logo ${partner.name}`}
+                                        fill
+                                        className="object-contain group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) => {
+                                            const target = e.target as HTMLImageElement;
+                                            target.style.display = 'none';
+                                            const parent = target.parentElement;
+                                            if (parent) {
+                                                parent.innerHTML = `
+                                                    <div class=\"w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2\">${partner.name}</div>
+                                                `;
+                                            }
+                                        }}
+                                    />
+                                </div>
+                                <h3 className="text-lg font-bold text-center mb-3 group-hover:text-primary transition-colors font-rakiby">
+                                    {partner.name}
+                                </h3>
+                                <Badge
+                                    variant="secondary"
+                                    className="text-sm px-4 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                                >
+                                    {partner.category}
+                                </Badge>
+                            </a>
+                        </MagicCard>
                     ))}
                 </div>
 
