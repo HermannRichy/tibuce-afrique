@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Badge } from "@/src/components/ui/badge";
+import Link from "next/link";
 
 export function PartnersSection() {
     // Données des partenaires - vous pouvez les modifier selon vos besoins
@@ -9,24 +10,27 @@ export function PartnersSection() {
             name: "SCIADO Partenaires",
             logo: "/partners/Sciado partenaires.png",
             website: "https://sciado.fr/",
-            category: "Formation"
+            category: "Formation",
         },
         {
             name: "AFRONEX QUANTUM ",
             logo: "/partners/logo AFRONEX QUANTUM.png",
             website: "#",
-            category: "Entrepreneuriat"
+            category: "Entrepreneuriat",
         },
         {
             name: "ONG DAFA",
             logo: "/partners/logo ONG DAFA.png",
             website: "#",
-            category: "Innovation"
+            category: "Innovation",
         },
     ];
 
     return (
-        <section className="container mx-auto py-16 px-4 relative" id="partners">
+        <section
+            className="container mx-auto py-16 px-4 relative"
+            id="partners"
+        >
             {/* Arrière-plan décoratif pour l'effet glassmorphisme */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 rounded-3xl -z-10"></div>
             <div className="max-w-6xl mx-auto">
@@ -36,8 +40,9 @@ export function PartnersSection() {
                         Nos Partenaires
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Nous sommes fiers de collaborer avec des organisations qui partagent notre vision
-                        de l&apos;excellence entrepreneuriale en Afrique.
+                        Nous sommes fiers de collaborer avec des organisations
+                        qui partagent notre vision de l&apos;excellence
+                        entrepreneuriale en Afrique.
                     </p>
                 </div>
 
@@ -61,8 +66,9 @@ export function PartnersSection() {
                                     className="object-contain group-hover:scale-110 transition-transform duration-500"
                                     onError={(e) => {
                                         // Fallback en cas d'image manquante
-                                        const target = e.target as HTMLImageElement;
-                                        target.style.display = 'none';
+                                        const target =
+                                            e.target as HTMLImageElement;
+                                        target.style.display = "none";
                                         const parent = target.parentElement;
                                         if (parent) {
                                             parent.innerHTML = `
@@ -95,24 +101,25 @@ export function PartnersSection() {
                                 Rejoignez notre Écosystème
                             </h3>
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Vous souhaitez devenir partenaire de TIBUCE Africa et contribuer
-                                à forger les leaders de demain ? Ensemble, construisons l&apos;avenir
+                                Vous souhaitez devenir partenaire de TIBUCE
+                                Africa et contribuer à forger les leaders de
+                                demain ? Ensemble, construisons l&apos;avenir
                                 entrepreneurial de l&apos;Afrique.
                             </p>
                         </div>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a
+                            <Link
                                 href="mailto:partenaires@tibuceafrica.com"
-                                className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105"
+                                className="inline-flex items-center px-8 py-2 text-xs bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl hover:scale-105"
                             >
                                 Devenir Partenaire
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#contact"
-                                className="inline-flex items-center px-8 py-4 border-2 border-primary text-primary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg"
+                                className="inline-flex items-center px-8 py-2 text-xs border border-primary text-primary rounded-md hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-lg"
                             >
                                 En savoir plus
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

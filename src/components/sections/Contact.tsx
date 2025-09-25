@@ -6,8 +6,8 @@ import {
     Mail,
     Send,
     Clock,
-    Instagram,
     Linkedin,
+    Facebook,
     ExternalLink,
     Music,
 } from "lucide-react";
@@ -61,14 +61,23 @@ export function ContactSection() {
     };
 
     const socialNetworks = [
-        {
+        /*{
             name: "Instagram",
             handle: "@tibuce_africa",
             icon: Instagram,
             description:
                 "Suivez nos actualités, découvrez les coulisses des événements et connectez-vous avec la communauté TIBUCE.",
-            url: "https://instagram.com/tibuce_africa",
+            url: "https://www.instagram.com/ong_dafa?igsh=YWN1azNuNDcwM2xl",
             color: "from-pink-500 to-purple-600",
+        },*/
+        {
+            name: "Facebook",
+            handle: "@tibuce_africa",
+            icon: Facebook,
+            description:
+                "Suivez nos actualités, découvrez les coulisses des événements et connectez-vous avec la communauté TIBUCE.",
+            url: "https://www.facebook.com/share/1BxyLyZNh8/",
+            color: "from-blue-500 to-blue-600",
         },
         {
             name: "LinkedIn",
@@ -76,7 +85,7 @@ export function ContactSection() {
             icon: Linkedin,
             description:
                 "Rejoignez notre réseau professionnel, accédez aux opportunités d'emploi et restez informé des développements du programme.",
-            url: "https://linkedin.com/company/tibuce-africa",
+            url: "https://www.linkedin.com/company/ong-dafa/",
             color: "from-blue-600 to-blue-800",
         },
         {
@@ -85,7 +94,7 @@ export function ContactSection() {
             icon: Music,
             description:
                 "Découvrez TIBUCE sous un angle dynamique avec des contenus créatifs, des témoignages participants et des tips entrepreneuriaux.",
-            url: "https://tiktok.com/@tibuce_africa",
+            url: "https://www.tiktok.com/@ong.dafa?_t=ZN-8zkYnuxioiM&_r=1",
             color: "from-black to-gray-800",
         },
     ];
@@ -177,12 +186,9 @@ export function ContactSection() {
                                                     </div>
                                                     <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                                                 </div>
-                                                <h4 className="font-bold text-lg mb-1">
+                                                <h4 className="font-bold text-primary text-lg mb-1">
                                                     {network.name}
                                                 </h4>
-                                                <p className="text-primary font-medium text-sm mb-3">
-                                                    {network.handle}
-                                                </p>
                                                 <p className="text-muted-foreground text-sm leading-relaxed">
                                                     {network.description}
                                                 </p>
