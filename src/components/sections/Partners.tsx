@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Badge } from "@/src/components/ui/badge";
 import Link from "next/link";
+import { MagicCard } from "@/src/components/magicui/magic-card";
 
 export function PartnersSection() {
     // Données des partenaires - vous pouvez les modifier selon vos besoins
@@ -24,6 +25,18 @@ export function PartnersSection() {
             website: "#",
             category: "Innovation",
         },
+        {
+            name: "FARAJ & CIE",
+            logo: "/partners/logo FARAJ & CIE.png",
+            website: "https://www.facebook.com/FarajCie/",
+            category: "Finance",
+        },
+        {
+            name: "KABOWD",
+            logo: "/partners/logo KABOWD.png",
+            website: "#",
+            category: "Technologie",
+        },
     ];
 
     return (
@@ -39,58 +52,80 @@ export function PartnersSection() {
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
                         Nos Partenaires
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
                         Nous sommes fiers de collaborer avec des organisations
                         qui partagent notre vision de l&apos;excellence
                         entrepreneuriale en Afrique.
                     </p>
                 </div>
 
-                {/* Grille des partenaires - optimisée pour 3 partenaires */}
-                <div className="flex justify-center items-center gap-8 lg:gap-12">
-                    {partners.map((partner, index) => (
-                        <a
-                            key={index}
-                            href={partner.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 w-80 h-80 lg:w-96 lg:h-96 relative overflow-hidden cursor-pointer"
-                        >
-                            {/* Effet de reflet brillant au survol */}
-                            <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
-                            <div className="relative w-32 h-32 mb-6 overflow-hidden rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-6 shadow-lg group-hover:shadow-2xl group-hover:bg-white/30 transition-all duration-300">
-                                <Image
-                                    src={partner.logo}
-                                    alt={`Logo ${partner.name}`}
-                                    fill
-                                    className="object-contain group-hover:scale-110 transition-transform duration-500"
-                                    onError={(e) => {
-                                        // Fallback en cas d'image manquante
-                                        const target =
-                                            e.target as HTMLImageElement;
-                                        target.style.display = "none";
-                                        const parent = target.parentElement;
-                                        if (parent) {
-                                            parent.innerHTML = `
-                                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">
-                                                    ${partner.name}
-                                                </div>
-                                            `;
-                                        }
-                                    }}
-                                />
-                            </div>
-                            <h3 className="text-lg font-bold text-center mb-3 group-hover:text-primary transition-colors font-rakiby">
-                                {partner.name}
-                            </h3>
-                            <Badge
-                                variant="secondary"
-                                className="text-sm px-4 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                {/* Slider infini des partenaires */}
+                <div className="relative overflow-hidden">
+                    <div className="flex items-center gap-6 lg:gap-8 track will-change-transform">
+                        {[...partners, ...partners].map((partner, index) => (
+                            <MagicCard
+                                key={index}
+                                className="rounded-xl shrink-0"
+                                gradientFrom="#9E7AFF"
+                                gradientTo="#bc9128"
                             >
-                                {partner.category}
-                            </Badge>
-                        </a>
-                    ))}
+                                <Link
+                                    href={partner.website}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex flex-col items-center justify-center p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 w-60 sm:w-64 h-56 sm:h-64 relative overflow-hidden cursor-pointer"
+                                >
+                                    {/* Effet de reflet brillant au survol */}
+                                    <div className="absolute inset-0 -top-1 -left-1 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none"></div>
+                                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 mb-4 overflow-hidden rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-4 sm:p-6 shadow-lg group-hover:shadow-2xl group-hover:bg-white/30 transition-all duration-300">
+                                        <Image
+                                            src={partner.logo}
+                                            alt={`Logo ${partner.name}`}
+                                            fill
+                                            className="object-contain group-hover:scale-110 transition-transform duration-500"
+                                            onError={(e) => {
+                                                const target =
+                                                    e.target as HTMLImageElement;
+                                                target.style.display = "none";
+                                                const parent =
+                                                    target.parentElement;
+                                                if (parent) {
+                                                    parent.innerHTML = `
+                                                        <div class=\"w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2\">${partner.name}</div>
+                                                    `;
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                    <h3 className="text-base sm:text-lg font-bold text-center mb-2 group-hover:text-primary transition-colors font-rakiby">
+                                        {partner.name}
+                                    </h3>
+                                    <Badge
+                                        variant="secondary"
+                                        className="text-xs sm:text-sm px-3 py-1 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
+                                    >
+                                        {partner.category}
+                                    </Badge>
+                                </Link>
+                            </MagicCard>
+                        ))}
+                    </div>
+                    <style jsx>{`
+                        .track {
+                            animation: scroll 30s linear infinite;
+                        }
+                        .track:hover {
+                            animation-play-state: paused;
+                        }
+                        @keyframes scroll {
+                            0% {
+                                transform: translateX(0);
+                            }
+                            100% {
+                                transform: translateX(-50%);
+                            }
+                        }
+                    `}</style>
                 </div>
 
                 {/* Section CTA pour devenir partenaire */}
@@ -100,7 +135,7 @@ export function PartnersSection() {
                             <h3 className="text-3xl font-bold mb-4 font-rakiby text-primary">
                                 Rejoignez notre Écosystème
                             </h3>
-                            <p className="text-lg text-muted-foreground leading-relaxed">
+                            <p className="text-xs text-muted-foreground leading-relaxed">
                                 Vous souhaitez devenir partenaire de TIBUCE
                                 Africa et contribuer à forger les leaders de
                                 demain ? Ensemble, construisons l&apos;avenir
