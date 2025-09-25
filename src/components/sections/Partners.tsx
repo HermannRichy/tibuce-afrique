@@ -52,7 +52,7 @@ export function PartnersSection() {
                     <h2 className="text-4xl font-bold mb-4 font-rakiby text-primary">
                         Nos Partenaires
                     </h2>
-                    <p className="text-xs text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
                         Nous sommes fiers de collaborer avec des organisations
                         qui partagent notre vision de l&apos;excellence
                         entrepreneuriale en Afrique.
@@ -135,7 +135,7 @@ export function PartnersSection() {
                             <h3 className="text-3xl font-bold mb-4 font-rakiby text-primary">
                                 Rejoignez notre Écosystème
                             </h3>
-                            <p className="text-xs text-muted-foreground leading-relaxed">
+                            <p className="text-sm text-muted-foreground leading-relaxed">
                                 Vous souhaitez devenir partenaire de TIBUCE
                                 Africa et contribuer à forger les leaders de
                                 demain ? Ensemble, construisons l&apos;avenir
