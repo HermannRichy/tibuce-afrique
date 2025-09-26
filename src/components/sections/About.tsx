@@ -25,7 +25,6 @@ export function AboutSection() {
             description:
                 "Découvrez les détails de cette édition exceptionnelle qui promet de révolutionner l'entrepreneuriat africain.",
             date: "15 Septembre 2025",
-            image: "/news/tibuce-launch.jpg",
             category: "Événement",
         },
         {
@@ -34,7 +33,6 @@ export function AboutSection() {
             description:
                 "Nous sommes fiers d'annoncer l'arrivée de nouveaux partenaires qui renforcent notre écosystème.",
             date: "25 Septembre 2025",
-            image: "/news/partners.jpg",
             category: "Partenariat",
         },
         /*{
@@ -43,7 +41,6 @@ export function AboutSection() {
             description:
                 "Nos mentors suivent une formation intensive pour accompagner au mieux les participants.",
             date: "5 Janvier 2024",
-            image: "/news/mentors.jpg",
             category: "Formation",
         },*/
         {
@@ -52,7 +49,6 @@ export function AboutSection() {
             description:
                 "Les candidatures sont maintenant ouvertes pour la première édition de TIBUCE Africa Bénin.",
             date: "20 Septembre 2024",
-            image: "/news/registrations.jpg",
             category: "Inscription",
         },
     ];
@@ -237,25 +233,9 @@ export function AboutSection() {
                                     >
                                         <div className="p-6 h-64 sm:h-72 flex flex-col">
                                             <div className="relative w-full h-32 mb-4 overflow-hidden rounded-lg">
-                                                <Image
-                                                    src={article.image}
-                                                    alt={article.title}
-                                                    fill
-                                                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                                                    onError={(e) => {
-                                                        const target =
-                                                            e.target as HTMLImageElement;
-                                                        target.style.display =
-                                                            "none";
-                                                        const parent =
-                                                            target.parentElement;
-                                                        if (parent) {
-                                                            parent.innerHTML = `
-                                                                <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">${article.title}</div>
-                                                            `;
-                                                        }
-                                                    }}
-                                                />
+                                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">
+                                                    {article.title}
+                                                </div>
                                             </div>
                                             <div className="flex-1 flex flex-col">
                                                 <div className="flex items-center justify-between mb-2">
