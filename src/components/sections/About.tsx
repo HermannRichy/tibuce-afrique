@@ -86,6 +86,50 @@ export function AboutSection() {
             category: "Technologie",
         },
     ];
+
+    // Données "Qui sommes-nous"
+    const aboutSlides = [
+        {
+            icon: Plus,
+            title: "Notre Mission",
+            description:
+                "TIBUCE Africa révolutionne la formation entrepreneuriale africaine. Nous identifions et développons la prochaine génération de leaders économiques du continent à travers une plateforme d'excellence unique.",
+            gradientFrom: "#9E7AFF",
+            gradientTo: "#bc9128",
+        },
+        {
+            icon: Layout,
+            title: "Le Concept",
+            description:
+                "Un tournoi innovant qui transforme l'apprentissage en expérience concrète. Les participants relèvent des défis business réels dans un environnement simulant l'écosystème entrepreneurial africain.",
+            gradientFrom: "#FE8BBB",
+            gradientTo: "#bc9128",
+        },
+        {
+            icon: Rocket,
+            title: "Notre Vision",
+            description:
+                "Nous croyons au potentiel extraordinaire de l'Afrique et sa jeunesse. Notre approche combine formation intensive, mentorat et réseautage pour créer un écosystème d'excellence entrepreneuriale.",
+            gradientFrom: "#9E7AFF",
+            gradientTo: "#bc9128",
+        },
+        {
+            icon: Target,
+            title: "Notre Objectif",
+            description:
+                "Offrir un cadre d'excellence pour transformer des idées en projets viables, développer des compétences clés et catalyser l'impact économique à l'échelle du continent. C'est ça l'objectif de Tibuce Afirca",
+            gradientFrom: "#9E7AFF",
+            gradientTo: "#bc9128",
+        },
+    ];
+
+    // Trouver le nombre maximum de slides pour synchroniser toutes les sections
+    const maxSlides = Math.max(
+        partners.length,
+        news.length,
+        aboutSlides.length
+    );
+
     return (
         <section className="container mx-auto mt-16 py-16 px-4" id="about">
             <div className="max-w-6xl mx-auto">
@@ -101,27 +145,30 @@ export function AboutSection() {
                         génération de leaders économiques du continent.
                     </p>
                 </div>
+
+                {/* Contrôles de navigation centralisés */}
+                <div className="mb-8 flex items-center gap-2 justify-center">
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="unified-swiper-prev size-9 rounded-md"
+                        aria-label="Précédent"
+                    >
+                        <ArrowLeft className="size-5 text-primary" />
+                    </Button>
+                    <Button
+                        variant="outline"
+                        size="icon"
+                        className="unified-swiper-next size-9 rounded-md"
+                        aria-label="Suivant"
+                    >
+                        <ArrowRight className="size-5 text-primary" />
+                    </Button>
+                </div>
+
                 <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 lg:gap-6">
-                    {/* Swiper des partenaires */}
+                    {/* Section Partenaires */}
                     <div>
-                        <div className="mb-4 flex items-center gap-2">
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="partners-swiper-prev size-9 rounded-md"
-                                aria-label="Précédent"
-                            >
-                                <ArrowLeft className="size-5 text-primary" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="partners-swiper-next size-9 rounded-md"
-                                aria-label="Suivant"
-                            >
-                                <ArrowRight className="size-5 text-primary" />
-                            </Button>
-                        </div>
                         <h3 className="text-2xl font-bold mb-4 font-rakiby text-primary">
                             Sponsors & Partenaires
                         </h3>
@@ -132,13 +179,13 @@ export function AboutSection() {
                             loop
                             speed={600}
                             autoplay={{
-                                delay: 3000,
+                                delay: 3500,
                                 pauseOnMouseEnter: true,
                                 disableOnInteraction: false,
                             }}
                             navigation={{
-                                prevEl: ".partners-swiper-prev",
-                                nextEl: ".partners-swiper-next",
+                                prevEl: ".unified-swiper-prev",
+                                nextEl: ".unified-swiper-next",
                             }}
                         >
                             {partners.map((partner, index) => (
@@ -169,7 +216,7 @@ export function AboutSection() {
                                                             target.parentElement;
                                                         if (parent) {
                                                             parent.innerHTML = `
-                                                        <div class=\"w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2\">${partner.name}</div>
+                                                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">${partner.name}</div>
                                                     `;
                                                         }
                                                     }}
@@ -187,24 +234,6 @@ export function AboutSection() {
 
                     {/* Section Actualités */}
                     <div>
-                        <div className="mb-4 flex items-center gap-2">
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="news-swiper-prev size-9 rounded-md"
-                                aria-label="Précédent"
-                            >
-                                <ArrowLeft className="size-5 text-primary" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="news-swiper-next size-9 rounded-md"
-                                aria-label="Suivant"
-                            >
-                                <ArrowRight className="size-5 text-primary" />
-                            </Button>
-                        </div>
                         <h3 className="text-2xl font-bold mb-4 font-rakiby text-primary">
                             Actualités
                         </h3>
@@ -215,13 +244,13 @@ export function AboutSection() {
                             loop
                             speed={600}
                             autoplay={{
-                                delay: 4000,
+                                delay: 3500,
                                 pauseOnMouseEnter: true,
                                 disableOnInteraction: false,
                             }}
                             navigation={{
-                                prevEl: ".news-swiper-prev",
-                                nextEl: ".news-swiper-next",
+                                prevEl: ".unified-swiper-prev",
+                                nextEl: ".unified-swiper-next",
                             }}
                         >
                             {news.map((article) => (
@@ -265,24 +294,6 @@ export function AboutSection() {
 
                     {/* Section Qui sommes-nous */}
                     <div>
-                        <div className="mb-4 flex items-center gap-2">
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="about-swiper-prev size-9 rounded-md"
-                                aria-label="Précédent"
-                            >
-                                <ArrowLeft className="size-5 text-primary" />
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="about-swiper-next size-9 rounded-md"
-                                aria-label="Suivant"
-                            >
-                                <ArrowRight className="size-5 text-primary" />
-                            </Button>
-                        </div>
                         <h3 className="text-2xl font-bold mb-4 font-rakiby text-primary">
                             Qui sommes nous?
                         </h3>
@@ -293,131 +304,43 @@ export function AboutSection() {
                             loop
                             speed={600}
                             autoplay={{
-                                delay: 3000,
+                                delay: 3500,
                                 pauseOnMouseEnter: true,
                                 disableOnInteraction: false,
                             }}
                             navigation={{
-                                prevEl: ".about-swiper-prev",
-                                nextEl: ".about-swiper-next",
+                                prevEl: ".unified-swiper-prev",
+                                nextEl: ".unified-swiper-next",
                             }}
                         >
-                            <SwiperSlide>
-                                <MagicCard
-                                    gradientFrom="#9E7AFF"
-                                    gradientTo="#bc9128"
-                                    className="rounded-xl"
-                                >
-                                    <div className="p-6">
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            className="size-10 rounded-full mb-8"
+                            {aboutSlides.map((slide, index) => {
+                                const IconComponent = slide.icon;
+                                return (
+                                    <SwiperSlide key={index}>
+                                        <MagicCard
+                                            gradientFrom={slide.gradientFrom}
+                                            gradientTo={slide.gradientTo}
+                                            className="rounded-xl"
                                         >
-                                            <Plus className="text-primary" />
-                                        </Button>
-                                        <h3 className="text-xl font-bold mb-2">
-                                            Notre Mission
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm">
-                                            TIBUCE Africa révolutionne la
-                                            formation entrepreneuriale
-                                            africaine. Nous identifions et
-                                            développons la prochaine génération
-                                            de leaders économiques du continent
-                                            à travers une plateforme
-                                            d&apos;excellence unique.
-                                        </p>
-                                    </div>
-                                </MagicCard>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <MagicCard
-                                    gradientFrom="#FE8BBB"
-                                    gradientTo="#bc9128"
-                                    className="rounded-xl"
-                                >
-                                    <div className="p-6">
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            className="size-10 rounded-full mb-8"
-                                        >
-                                            <Layout className="text-primary" />
-                                        </Button>
-                                        <h3 className="text-xl font-bold mb-2">
-                                            Le Concept
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm">
-                                            Un tournoi innovant qui transforme
-                                            l&apos;apprentissage en expérience
-                                            concrète. Les participants relèvent
-                                            des défis business réels dans un
-                                            environnement simulant
-                                            l&apos;écosystème entrepreneurial
-                                            africain.
-                                        </p>
-                                    </div>
-                                </MagicCard>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <MagicCard
-                                    gradientFrom="#9E7AFF"
-                                    gradientTo="#bc9128"
-                                    className="rounded-xl"
-                                >
-                                    <div className="p-6">
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            className="size-10 rounded-full mb-8"
-                                        >
-                                            <Rocket className="text-primary" />
-                                        </Button>
-                                        <h3 className="text-xl font-bold mb-2">
-                                            Notre Vision
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm">
-                                            Nous croyons au potentiel
-                                            extraordinaire de l&apos;Afrique et
-                                            sa jeunesse. Notre approche combine
-                                            formation intensive, mentorat et
-                                            réseautage pour créer un écosystème
-                                            d&apos;excellence entrepreneuriale.
-                                        </p>
-                                    </div>
-                                </MagicCard>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <MagicCard
-                                    gradientFrom="#9E7AFF"
-                                    gradientTo="#bc9128"
-                                    className="rounded-xl"
-                                >
-                                    <div className="p-6">
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            className="size-10 rounded-full mb-8"
-                                        >
-                                            <Target className="text-primary" />
-                                        </Button>
-                                        <h3 className="text-xl font-bold mb-2">
-                                            Notre Objectif
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm">
-                                            Offrir un cadre d&apos;excellence
-                                            pour transformer des idées en
-                                            projets viables, développer des
-                                            compétences clés et catalyser
-                                            l&apos;impact économique à
-                                            l&apos;échelle du continent.
-                                            C&apos;est ça l&apos;objectif de
-                                            Tibuce Afirca
-                                        </p>
-                                    </div>
-                                </MagicCard>
-                            </SwiperSlide>
+                                            <div className="p-6 h-64">
+                                                <Button
+                                                    variant="outline"
+                                                    size="icon"
+                                                    className="size-10 rounded-full mb-8"
+                                                >
+                                                    <IconComponent className="text-primary" />
+                                                </Button>
+                                                <h3 className="text-xl font-bold mb-2">
+                                                    {slide.title}
+                                                </h3>
+                                                <p className="text-muted-foreground text-sm">
+                                                    {slide.description}
+                                                </p>
+                                            </div>
+                                        </MagicCard>
+                                    </SwiperSlide>
+                                );
+                            })}
                         </Swiper>
                     </div>
                 </aside>
