@@ -123,12 +123,12 @@ export function AboutSection() {
         },
     ];
 
-    // Trouver le nombre maximum de slides pour synchroniser toutes les sections
+    /* Trouver le nombre maximum de slides pour synchroniser toutes les sections
     const maxSlides = Math.max(
         partners.length,
         news.length,
         aboutSlides.length
-    );
+    ); */
 
     return (
         <section className="container mx-auto mt-16 py-16 px-4" id="about">
