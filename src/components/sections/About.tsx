@@ -1,5 +1,7 @@
 "use client";
 import { MagicCard } from "@/src/components/magicui/magic-card";
+import { useEffect } from "react";
+import { toast } from "sonner";
 import {
     Plus,
     Layout,
@@ -10,7 +12,6 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "@/src/components/ui/badge";
 import { Button } from "../ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
@@ -130,6 +131,32 @@ export function AboutSection() {
         aboutSlides.length
     ); */
 
+    useEffect(() => {
+        if (!news.length) return;
+        let currentIndex = 0;
+        const showNext = () => {
+            const item = news[currentIndex];
+            toast(item.title, {
+                description: item.description,
+            });
+            currentIndex = (currentIndex + 1) % news.length;
+        };
+
+        const initialTimeout: ReturnType<typeof setTimeout> = setTimeout(
+            showNext,
+            800
+        );
+        const intervalId: ReturnType<typeof setInterval> = setInterval(
+            showNext,
+            6000
+        );
+
+        return () => {
+            clearTimeout(initialTimeout);
+            clearInterval(intervalId);
+        };
+    }, []);
+
     return (
         <section className="container mx-auto mt-16 py-16 px-4" id="about">
             <div className="max-w-6xl mx-auto">
@@ -166,7 +193,7 @@ export function AboutSection() {
                     </Button>
                 </div>
 
-                <aside className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20 lg:gap-6">
+                <aside className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20 lg:gap-6 ">
                     {/* Section Partenaires */}
                     <div>
                         <h3 className="text-2xl font-bold mb-4 font-rakiby text-primary">
@@ -232,65 +259,7 @@ export function AboutSection() {
                         </Swiper>
                     </div>
 
-                    {/* Section Actualités */}
-                    <div>
-                        <h3 className="text-2xl font-bold mb-4 font-rakiby text-primary">
-                            Actualités
-                        </h3>
-                        <Swiper
-                            modules={[Autoplay, Navigation]}
-                            spaceBetween={24}
-                            slidesPerView={1}
-                            loop
-                            speed={600}
-                            autoplay={{
-                                delay: 3500,
-                                pauseOnMouseEnter: true,
-                                disableOnInteraction: false,
-                            }}
-                            navigation={{
-                                prevEl: ".unified-swiper-prev",
-                                nextEl: ".unified-swiper-next",
-                            }}
-                        >
-                            {news.map((article) => (
-                                <SwiperSlide key={article.id}>
-                                    <MagicCard
-                                        className="rounded-xl"
-                                        gradientFrom="#9E7AFF"
-                                        gradientTo="#bc9128"
-                                    >
-                                        <div className="p-6 h-64 sm:h-72 flex flex-col">
-                                            <div className="relative w-full h-32 mb-4 overflow-hidden rounded-lg">
-                                                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/20 text-primary text-sm font-medium text-center px-2">
-                                                    {article.title}
-                                                </div>
-                                            </div>
-                                            <div className="flex-1 flex flex-col">
-                                                <div className="flex items-center justify-between mb-2">
-                                                    <Badge
-                                                        variant="secondary"
-                                                        className="text-xs"
-                                                    >
-                                                        {article.category}
-                                                    </Badge>
-                                                    <span className="text-xs text-muted-foreground">
-                                                        {article.date}
-                                                    </span>
-                                                </div>
-                                                <h4 className="text-lg font-bold mb-2 line-clamp-2">
-                                                    {article.title}
-                                                </h4>
-                                                <p className="text-sm text-muted-foreground line-clamp-3 flex-1">
-                                                    {article.description}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </MagicCard>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    </div>
+                    {/* Section Actualités retirée (notifications via Sonner désormais) */}
 
                     {/* Section Qui sommes-nous */}
                     <div>
