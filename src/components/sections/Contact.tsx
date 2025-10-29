@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from "@emailjs/browser";
 import {
     Mail,
     Send,
@@ -35,26 +34,29 @@ export function ContactSection() {
 
     const onSubmit = async (data: FormData) => {
         setLoading(true);
-
         try {
-            await emailjs.send(
-                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-                {
-                    name: data.name,
-                    email: data.email,
-                    message: data.message,
-                },
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-            );
+            const phone = "33766575073"; // +33 7 66 57 50 73
+            const text =
+                `Nouveau message depuis le formulaire TIBUCE%0A%0A` +
+                `Nom: ${encodeURIComponent(data.name)}%0A` +
+                `Email: ${encodeURIComponent(data.email)}%0A` +
+                `Message: ${encodeURIComponent(data.message)}`;
 
-            toast.success(
-                "Message envoyé avec succès ! Nous vous répondrons bientôt."
-            );
-            reset();
+            const url = `https://api.whatsapp.com/send?phone=${phone}&text=${text}`;
+
+            const opened = window.open(url, "_blank", "noopener,noreferrer");
+            if (!opened) {
+                // Popup bloquée
+                toast.error(
+                    "Veuillez autoriser l'ouverture de fenêtres pop-up pour WhatsApp."
+                );
+            } else {
+                toast.success("Redirection vers WhatsApp…");
+                reset();
+            }
         } catch (error) {
-            console.error("Erreur lors de l'envoi:", error);
-            toast.error("Une erreur est survenue. Veuillez réessayer.");
+            console.error("Erreur lors de l'ouverture WhatsApp:", error);
+            toast.error("Impossible d'ouvrir WhatsApp. Réessayez.");
         } finally {
             setLoading(false);
         }
