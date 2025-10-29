@@ -1,6 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,58 +8,48 @@ datasource db {
 }
 
 model Inscription {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  // Informations générales
-  teamName           String   @unique
-  country            String
-  edition            String
-  organization       String
-  organizationOther  String?
-  numberOfMembers    Int      // 2 ou 3
-  projectTitle       String?
-  projectDescription String?
-  paymentMethod      String
-  paymentMethodOther String?
-  paymentReference   String
-  teamRepresentative String
-  selectedTrack      String[] // Array de strings pour les volets choisis
-
-  // Participant 1
+  id                      Int       @id @default(autoincrement())
+  createdAt               DateTime  @default(now())
+  updatedAt               DateTime  @updatedAt
+  teamName                String    @unique
+  country                 String
+  edition                 String
+  organization            String
+  organizationOther       String?
+  numberOfMembers         Int
+  projectTitle            String?
+  projectDescription      String?
+  paymentMethod           String?
+  paymentMethodOther      String?
+  paymentReference        String?
+  teamRepresentative      String
+  selectedTrack           String[]
   participant1Name        String
   participant1Phone       String
-  participant1Email       String   @unique
+  participant1Email       String    @unique
   participant1BirthDate   DateTime
-  participant1Gender      String   // "H" ou "F"
+  participant1Gender      String
   participant1Education   String
-  participant1Status        String[] // Array de strings pour les statuts
-  participant1StatusOther   String?
-
-  // Participant 2
-  participant2Name          String
-  participant2Phone         String
-  participant2Email         String   @unique
-  participant2BirthDate     DateTime
-  participant2Gender        String   // "H" ou "F"
-  participant2Education     String
-  participant2Status        String[] // Array de strings pour les statuts
-  participant2StatusOther   String?
-
-  // Participant 3 (optionnel)
-  participant3Name          String?
-  participant3Phone         String?
-  participant3Email         String?  @unique
-  participant3BirthDate     DateTime?
-  participant3Gender        String?  // "H" ou "F"
-  participant3Education     String?
-  participant3Status        String[] // Array de strings pour les statuts
-  participant3StatusOther   String?
-
-  // Validation
-  validationDate DateTime
-  acceptTerms    Boolean  @default(false)
+  participant1Status      String[]
+  participant1StatusOther String?
+  participant2Name        String
+  participant2Phone       String
+  participant2Email       String    @unique
+  participant2BirthDate   DateTime
+  participant2Gender      String
+  participant2Education   String
+  participant2Status      String[]
+  participant2StatusOther String?
+  participant3Name        String?
+  participant3Phone       String?
+  participant3Email       String?   @unique
+  participant3BirthDate   DateTime?
+  participant3Gender      String?
+  participant3Education   String?
+  participant3Status      String[]
+  participant3StatusOther String?
+  validationDate          DateTime
+  acceptTerms             Boolean   @default(false)
 
   @@map("inscriptions")
 }

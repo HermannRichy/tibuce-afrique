@@ -28,8 +28,8 @@ interface FormData {
     numberOfMembers: "2" | "3";
     projectTitle?: string;
     projectDescription?: string;
-    paymentReference: string;
-    paymentMethod: string;
+    paymentReference?: string;
+    paymentMethod?: string;
     paymentMethodOther?: string;
     teamRepresentative: string;
     selectedTrack: string[];
@@ -190,9 +190,9 @@ export default function InscriptionPage() {
                 selectedTrack: Array.isArray(data.selectedTrack)
                     ? data.selectedTrack.join(", ")
                     : data.selectedTrack,
-                paymentMethod: data.paymentMethod,
+                paymentMethod: data.paymentMethod || "Non renseigné",
                 paymentMethodOther: data.paymentMethodOther || "",
-                paymentReference: data.paymentReference,
+                paymentReference: data.paymentReference || "Non renseigné",
                 participant1Name: data.participant1Name,
                 participant1Email: data.participant1Email,
                 participant1Phone: data.participant1Phone,
@@ -545,20 +545,29 @@ export default function InscriptionPage() {
                             <div className="flex items-center gap-3 mb-6">
                                 <CreditCard className="h-6 w-6 text-primary" />
                                 <h2 className="text-2xl font-bold text-primary font-rakiby">
-                                    Informations de Paiement
+                                    Informations de Paiement (Optionnel)
                                 </h2>
+                            </div>
+
+                            <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6">
+                                <p className="text-sm text-muted-foreground">
+                                    <span className="font-medium text-primary">
+                                        Note :
+                                    </span>{" "}
+                                    Vous pouvez soumettre votre inscription et
+                                    effectuer le paiement ultérieurement. Si
+                                    vous avez déjà payé, veuillez renseigner les
+                                    informations ci-dessous.
+                                </p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium mb-2">
-                                        Mode de paiement *
+                                        Mode de paiement
                                     </label>
                                     <select
-                                        {...register("paymentMethod", {
-                                            required:
-                                                "Le mode de paiement est requis",
-                                        })}
+                                        {...register("paymentMethod")}
                                         className="w-full px-3 py-2 border border-input rounded-md bg-background"
                                     >
                                         <option value="">
@@ -570,34 +579,16 @@ export default function InscriptionPage() {
                                             </option>
                                         ))}
                                     </select>
-                                    {errors.paymentMethod && (
-                                        <p className="text-destructive text-sm mt-1">
-                                            {errors.paymentMethod.message}
-                                        </p>
-                                    )}
                                 </div>
 
                                 <div>
                                     <label className="block text-sm font-medium mb-2">
-                                        Référence / reçu de paiement *
+                                        Référence / reçu de paiement
                                     </label>
                                     <Input
-                                        {...register("paymentReference", {
-                                            required:
-                                                "La référence est requise",
-                                        })}
+                                        {...register("paymentReference")}
                                         placeholder="Numéro de référence"
-                                        className={
-                                            errors.paymentReference
-                                                ? "border-destructive"
-                                                : ""
-                                        }
                                     />
-                                    {errors.paymentReference && (
-                                        <p className="text-destructive text-sm mt-1">
-                                            {errors.paymentReference.message}
-                                        </p>
-                                    )}
                                 </div>
 
                                 <div className="md:col-span-2">
