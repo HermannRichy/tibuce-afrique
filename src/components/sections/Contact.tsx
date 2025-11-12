@@ -35,7 +35,7 @@ export function ContactSection() {
     const onSubmit = async (data: FormData) => {
         setLoading(true);
         try {
-            const phone = "33766575073"; // +33 7 66 57 50 73
+            const phone = "33745765370"; // +33 7 45 76 53 70
             const text =
                 `Nouveau message depuis le formulaire TIBUCE%0A%0A` +
                 `Nom: ${encodeURIComponent(data.name)}%0A` +
