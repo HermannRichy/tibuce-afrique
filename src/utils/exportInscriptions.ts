@@ -17,6 +17,15 @@ import { format } from "date-fns";
 import { fr } from "date-fns/locale";
 
 /**
+ * Interface étendue pour jsPDF avec la propriété lastAutoTable ajoutée par jspdf-autotable
+ */
+interface jsPDFWithAutoTable extends jsPDF {
+    lastAutoTable?: {
+        finalY: number;
+    };
+}
+
+/**
  * Format une date pour l'affichage
  */
 const formatDate = (dateString: string): string => {
@@ -186,7 +195,10 @@ export const exportToPDF = (inscriptions: InscriptionSummary[]) => {
     });
 
     // Ajouter les détails complets pour chaque inscription sur des pages supplémentaires si nécessaire
-    let yPos = (doc as any).lastAutoTable.finalY + 10;
+    const docWithAutoTable = doc as jsPDFWithAutoTable;
+    let yPos = docWithAutoTable.lastAutoTable?.finalY
+        ? docWithAutoTable.lastAutoTable.finalY + 10
+        : 28 + tableData.length * 8 + 20; // Estimation si lastAutoTable n'est pas disponible
     if (yPos > 180) {
         doc.addPage();
         yPos = 20;

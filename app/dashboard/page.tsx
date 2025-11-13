@@ -29,7 +29,6 @@ import {
     FileText,
     FileSpreadsheet,
     File,
-    FileJson,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -39,7 +38,6 @@ import {
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuTrigger,
-    DropdownMenuSeparator,
 } from "@/src/components/ui/dropdown-menu";
 import {
     exportToCSV,
