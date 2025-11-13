@@ -24,6 +24,7 @@ const formatDate = (dateString: string): string => {
         return format(new Date(dateString), "dd/MM/yyyy HH:mm", { locale: fr });
     } catch (error) {
         return dateString;
+        console.log(error);
     }
 };
 
