@@ -18,19 +18,83 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/src/components/ui/tabs";
-import { User, Settings, BarChart3, LogOut, List, Plus } from "lucide-react";
+import {
+    User,
+    Settings,
+    BarChart3,
+    LogOut,
+    List,
+    Plus,
+    Download,
+    FileText,
+    FileSpreadsheet,
+    File,
+    FileJson,
+} from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { InscriptionSummary } from "@/src/types/inscription";
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+    DropdownMenuSeparator,
+} from "@/src/components/ui/dropdown-menu";
+import {
+    exportToCSV,
+    exportToXLSX,
+    exportToPDF,
+    exportToDOCX,
+} from "@/src/utils/exportInscriptions";
+import { toast } from "sonner";
 
 export default function DashboardPage() {
     const [selectedInscription, setSelectedInscription] =
         useState<InscriptionSummary | null>(null);
     const [showDetails, setShowDetails] = useState(false);
+    const [inscriptions, setInscriptions] = useState<InscriptionSummary[]>([]);
 
     const handleViewInscription = (inscription: InscriptionSummary) => {
         setSelectedInscription(inscription);
         setShowDetails(true);
+    };
+
+    const handleInscriptionsLoaded = (
+        loadedInscriptions: InscriptionSummary[]
+    ) => {
+        setInscriptions(loadedInscriptions);
+    };
+
+    const handleExport = async (format: "csv" | "xlsx" | "pdf" | "docx") => {
+        if (inscriptions.length === 0) {
+            toast.error("Aucune inscription à exporter");
+            return;
+        }
+
+        try {
+            switch (format) {
+                case "csv":
+                    exportToCSV(inscriptions);
+                    toast.success("Export CSV réussi");
+                    break;
+                case "xlsx":
+                    exportToXLSX(inscriptions);
+                    toast.success("Export Excel réussi");
+                    break;
+                case "pdf":
+                    exportToPDF(inscriptions);
+                    toast.success("Export PDF réussi");
+                    break;
+                case "docx":
+                    await exportToDOCX(inscriptions);
+                    toast.success("Export Word réussi");
+                    break;
+            }
+        } catch (error) {
+            console.error("Erreur lors de l'export:", error);
+            toast.error("Erreur lors de l'export");
+        }
     };
 
     return (
@@ -182,16 +246,63 @@ export default function DashboardPage() {
                                             inscriptions
                                         </p>
                                     </div>
-                                    <Button asChild>
-                                        <Link href="/inscription">
-                                            <Plus className="mr-2 h-4 w-4" />
-                                            Nouvelle inscription
-                                        </Link>
-                                    </Button>
+                                    <div className="flex items-center gap-2">
+                                        <DropdownMenu>
+                                            <DropdownMenuTrigger asChild>
+                                                <Button variant="outline">
+                                                    <Download className="mr-2 h-4 w-4" />
+                                                    Exporter
+                                                </Button>
+                                            </DropdownMenuTrigger>
+                                            <DropdownMenuContent align="end">
+                                                <DropdownMenuItem
+                                                    onClick={() =>
+                                                        handleExport("csv")
+                                                    }
+                                                >
+                                                    <FileText className="mr-2 h-4 w-4" />
+                                                    Exporter en CSV
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem
+                                                    onClick={() =>
+                                                        handleExport("xlsx")
+                                                    }
+                                                >
+                                                    <FileSpreadsheet className="mr-2 h-4 w-4" />
+                                                    Exporter en Excel (XLSX)
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem
+                                                    onClick={() =>
+                                                        handleExport("pdf")
+                                                    }
+                                                >
+                                                    <File className="mr-2 h-4 w-4" />
+                                                    Exporter en PDF
+                                                </DropdownMenuItem>
+                                                <DropdownMenuItem
+                                                    onClick={() =>
+                                                        handleExport("docx")
+                                                    }
+                                                >
+                                                    <FileText className="mr-2 h-4 w-4" />
+                                                    Exporter en Word (DOCX)
+                                                </DropdownMenuItem>
+                                            </DropdownMenuContent>
+                                        </DropdownMenu>
+                                        <Button asChild>
+                                            <Link href="/inscription">
+                                                <Plus className="mr-2 h-4 w-4" />
+                                                Nouvelle inscription
+                                            </Link>
+                                        </Button>
+                                    </div>
                                 </div>
 
                                 <InscriptionsTable
                                     onView={handleViewInscription}
+                                    onInscriptionsLoaded={
+                                        handleInscriptionsLoaded
+                                    }
                                 />
                             </TabsContent>
                         </Tabs>

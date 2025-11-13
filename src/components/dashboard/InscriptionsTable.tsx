@@ -43,9 +43,13 @@ import { InscriptionSummary } from "@/src/types/inscription";
 
 interface InscriptionsTableProps {
     onView: (inscription: InscriptionSummary) => void;
+    onInscriptionsLoaded?: (inscriptions: InscriptionSummary[]) => void;
 }
 
-export default function InscriptionsTable({ onView }: InscriptionsTableProps) {
+export default function InscriptionsTable({
+    onView,
+    onInscriptionsLoaded,
+}: InscriptionsTableProps) {
     const [inscriptions, setInscriptions] = useState<InscriptionSummary[]>([]);
     const [loading, setLoading] = useState(true);
     const [deleteId, setDeleteId] = useState<number | null>(null);
@@ -61,6 +65,9 @@ export default function InscriptionsTable({ onView }: InscriptionsTableProps) {
 
             if (data.success) {
                 setInscriptions(data.data);
+                if (onInscriptionsLoaded) {
+                    onInscriptionsLoaded(data.data);
+                }
             } else {
                 toast.error("Erreur lors du chargement des inscriptions");
             }
