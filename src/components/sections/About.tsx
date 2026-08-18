@@ -22,10 +22,10 @@ export function AboutSection() {
     const news = [
         {
             id: 1,
-            title: "Lancement officiel de TIBUCE Africa 2025",
+            title: "Lancement officiel de TIBUCE Africa 2026",
             description:
                 "Découvrez les détails de cette édition exceptionnelle qui promet de révolutionner l'entrepreneuriat africain.",
-            date: "15 Septembre 2025",
+            date: "15 Septembre 2026",
             category: "Événement",
         },
         {
@@ -33,7 +33,7 @@ export function AboutSection() {
             title: "Nouveaux partenaires stratégiques",
             description:
                 "Nous sommes fiers d'annoncer l'arrivée de nouveaux partenaires qui renforcent notre écosystème.",
-            date: "25 Septembre 2025",
+            date: "25 Septembre 2026",
             category: "Partenariat",
         },
         /*{
@@ -49,7 +49,7 @@ export function AboutSection() {
             title: "Inscriptions ouvertes pour Tibuce Benin",
             description:
                 "Les candidatures sont maintenant ouvertes pour la première édition de TIBUCE Africa Bénin.",
-            date: "20 Septembre 2024",
+            date: "20 Septembre 2026",
             category: "Inscription",
         },
     ];
@@ -228,7 +228,7 @@ export function AboutSection() {
                                             rel="noopener noreferrer"
                                             className="group flex flex-col items-center justify-center p-8 rounded-2xl transition-all duration-500 hover:shadow-2xl hover:shadow-primary/10 h-56 sm:h-64 cursor-pointer"
                                         >
-                                            <div className="relative w-28 h-28 sm:w-32 sm:h-32 mb-4 rounded-2xl border border-white/30 p-4 sm:p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
+                                            <div className="relative size-28 sm:size-32 mb-4 rounded-2xl border border-white/30 p-4 sm:p-6 shadow-lg group-hover:shadow-2xl transition-all duration-300">
                                                 <Image
                                                     src={partner.logo}
                                                     alt={`Logo ${partner.name}`}

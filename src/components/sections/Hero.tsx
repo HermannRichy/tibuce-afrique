@@ -126,14 +126,14 @@ const DummyContent = () => {
                 <HeroVideoDialog
                     className="block dark:hidden"
                     animationStyle="top-in-bottom-out"
-                    videoSrc="/Tibuce.mp4"
+                    videoSrc="/tibuce-new.mp4"
                     thumbnailSrc="/tibuce-thumbnail.png"
                     thumbnailAlt="Hero Video"
                 />
                 <HeroVideoDialog
                     className="hidden dark:block"
                     animationStyle="top-in-bottom-out"
-                    videoSrc="/Tibuce.mp4"
+                    videoSrc="/tibuce-new.mp4"
                     thumbnailSrc="/tibuce-thumbnail.png"
                     thumbnailAlt="Hero Video"
                 />

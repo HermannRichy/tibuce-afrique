@@ -1,8 +1,7 @@
 "use client";
 import Link from "next/link";
+import { IconBrandInstagram, IconBrandLinkedin } from "@tabler/icons-react";
 import {
-    Instagram,
-    Linkedin,
     Music,
     Mail,
     Globe,
@@ -26,13 +25,13 @@ export function Footer() {
         {
             name: "Instagram",
             href: "https://instagram.com/tibuce_africa",
-            icon: Instagram,
+            icon: IconBrandInstagram,
             color: "hover:text-pink-500",
         },
         {
             name: "LinkedIn",
             href: "https://linkedin.com/company/tibuce-africa",
-            icon: Linkedin,
+            icon: IconBrandLinkedin,
             color: "hover:text-blue-600",
         },
         {
@@ -69,15 +68,15 @@ export function Footer() {
                         </div>
 
                         {/* Contact rapide */}
-                        <div className="space-y-3">
+                        <div className="flex flex-col gap-3">
                             <div className="flex items-center gap-3 text-sm">
-                                <Mail className="h-4 w-4 text-primary" />
+                                <Mail className="size-4 text-primary" />
                                 <span className="text-muted-foreground">
                                     contact@tibuceafrica.com
                                 </span>
                             </div>
                             <div className="flex items-center gap-3 text-sm">
-                                <Globe className="h-4 w-4 text-primary" />
+                                <Globe className="size-4 text-primary" />
                                 <span className="text-muted-foreground">
                                     www.tibuceafrica.com
                                 </span>
@@ -90,14 +89,14 @@ export function Footer() {
                         <h4 className="font-semibold text-lg mb-4 text-foreground">
                             Navigation
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="flex flex-col gap-3">
                             {navigationLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
                                         className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                     >
-                                        <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <ArrowRight className="size-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                                         {link.name}
                                     </Link>
                                 </li>
@@ -110,14 +109,14 @@ export function Footer() {
                         <h4 className="font-semibold text-lg mb-4 text-foreground">
                             Liens rapides
                         </h4>
-                        <ul className="space-y-3">
+                        <ul className="flex flex-col gap-3">
                             {quickLinks.map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
                                         className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
                                     >
-                                        <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                                        <ArrowRight className="size-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                                         {link.name}
                                     </Link>
                                 </li>
@@ -142,7 +141,7 @@ export function Footer() {
                                         className={`p-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors ${social.color}`}
                                         aria-label={social.name}
                                     >
-                                        <IconComponent className="h-5 w-5" />
+                                        <IconComponent className="size-5" />
                                     </Link>
                                 );
                             })}
@@ -174,7 +173,7 @@ export function Footer() {
 
                         <div className="flex items-center gap-1 text-sm text-muted-foreground">
                             <span>Fait avec</span>
-                            <Heart className="h-4 w-4 text-red-500" />
+                            <Heart className="size-4 text-red-500" />
                             <span>pour l&apos;Afrique</span>
                         </div>
 

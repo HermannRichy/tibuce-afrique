@@ -55,17 +55,17 @@ export default function Login() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <form onSubmit={handleSubmit} className="space-y-4">
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                         {error && (
                             <Alert variant="destructive">
                                 <AlertDescription>{error}</AlertDescription>
                             </Alert>
                         )}
 
-                        <div className="space-y-2">
+                        <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium">Email</label>
                             <div className="relative">
-                                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
                                 <Input
                                     type="email"
                                     placeholder="votre@email.com"
@@ -78,12 +78,12 @@ export default function Login() {
                             </div>
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="flex flex-col gap-2">
                             <label className="text-sm font-medium">
                                 Mot de passe
                             </label>
                             <div className="relative">
-                                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-muted-foreground" />
                                 <Input
                                     type="password"
                                     placeholder="••••••••"
@@ -105,13 +105,13 @@ export default function Login() {
                         >
                             {loading ? (
                                 <>
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                    <Loader2 className="mr-2 size-4 animate-spin" />
                                     Connexion en cours...
                                 </>
                             ) : (
                                 <>
                                     Se connecter
-                                    <ArrowRight className="ml-2 h-4 w-4" />
+                                    <ArrowRight className="ml-2 size-4" />
                                 </>
                             )}
                         </Button>

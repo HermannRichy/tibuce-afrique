@@ -7,7 +7,7 @@ export function ComingSoonSection() {
         {
             id: "tibuce-benin",
             title: "TIBUCE-BÉNIN 1ère Édition",
-            dates: "13 - 15 Novembre 2025",
+            dates: "13 - 15 Novembre 2026",
             format: "Événement hybride (présentiel + digital)",
             location: "Cotonou, Bénin",
             description:
@@ -24,7 +24,7 @@ export function ComingSoonSection() {
         {
             id: "tibuce-togo",
             title: "TIBUCE-TOGO 1ère Édition",
-            dates: "18 - 20 Novembre 2025",
+            dates: "18 - 20 Novembre 2026",
             format: "Événement hybride (présentiel + digital)",
             location: "Lomé, Togo",
             description:
@@ -104,7 +104,7 @@ export function ComingSoonSection() {
                                         <Award className="size-4 text-primary" />
                                         Points forts :
                                     </h4>
-                                    <ul className="space-y-2">
+                                    <ul className="flex flex-col gap-2">
                                         {event.highlights.map(
                                             (highlight, index) => (
                                                 <li

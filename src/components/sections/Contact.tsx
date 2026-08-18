@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { IconBrandFacebook, IconBrandLinkedin } from "@tabler/icons-react";
 import {
     Mail,
     Send,
     Clock,
-    Linkedin,
-    Facebook,
     ExternalLink,
     Music,
 } from "lucide-react";
@@ -75,7 +74,7 @@ export function ContactSection() {
         {
             name: "Facebook",
             handle: "@tibuce_africa",
-            icon: Facebook,
+            icon: IconBrandFacebook,
             description:
                 "Suivez nos actualités, découvrez les coulisses des événements et connectez-vous avec la communauté TIBUCE.",
             url: "https://www.facebook.com/share/1BxyLyZNh8/",
@@ -84,7 +83,7 @@ export function ContactSection() {
         {
             name: "LinkedIn",
             handle: "TIBUCE Africa",
-            icon: Linkedin,
+            icon: IconBrandLinkedin,
             description:
                 "Rejoignez notre réseau professionnel, accédez aux opportunités d'emploi et restez informé des développements du programme.",
             url: "https://www.linkedin.com/company/ong-dafa/",
@@ -123,10 +122,10 @@ export function ContactSection() {
                             <h3 className="text-2xl font-bold mb-6 font-rakiby text-primary">
                                 Contact Officiel
                             </h3>
-                            <div className="space-y-6">
-                                <div className="flex items-start space-x-4">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                                        <Mail className="h-6 w-6 text-primary" />
+                            <div className="flex flex-col gap-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 size-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <Mail className="size-6 text-primary" />
                                     </div>
                                     <div>
                                         <p className="font-semibold text-lg">
@@ -140,9 +139,9 @@ export function ContactSection() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="flex items-start space-x-4">
-                                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                                        <Clock className="h-6 w-6 text-primary" />
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 size-12 rounded-full bg-primary/10 flex items-center justify-center">
+                                        <Clock className="size-6 text-primary" />
                                     </div>
                                     <div>
                                         <p className="font-semibold text-lg">
@@ -182,11 +181,11 @@ export function ContactSection() {
                                             <div className="bg-card border rounded-xl p-6 h-full hover:shadow-lg transition-all duration-300 group-hover:scale-105">
                                                 <div className="flex items-center justify-between mb-4">
                                                     <div
-                                                        className={`w-12 h-12 rounded-full bg-gradient-to-r ${network.color} flex items-center justify-center`}
+                                                        className={`size-12 rounded-full bg-gradient-to-r ${network.color} flex items-center justify-center`}
                                                     >
-                                                        <IconComponent className="h-6 w-6 text-white" />
+                                                        <IconComponent className="size-6 text-white" />
                                                     </div>
-                                                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                                                    <ExternalLink className="size-4 text-muted-foreground group-hover:text-primary transition-colors" />
                                                 </div>
                                                 <h4 className="font-bold text-primary text-lg mb-1">
                                                     {network.name}
@@ -218,7 +217,7 @@ export function ContactSection() {
                     <div className="bg-card border rounded-lg p-8 shadow-sm">
                         <form
                             onSubmit={handleSubmit(onSubmit)}
-                            className="space-y-6"
+                            className="flex flex-col gap-6"
                             id="contact-form"
                         >
                             <div>
@@ -310,12 +309,12 @@ export function ContactSection() {
                             >
                                 {loading ? (
                                     <>
-                                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                                        <div className="animate-spin rounded-full size-4 border-b-2 border-white mr-2"></div>
                                         Envoi en cours...
                                     </>
                                 ) : (
                                     <>
-                                        <Send className="h-4 w-4 mr-2" />
+                                        <Send className="size-4 mr-2" />
                                         Envoyer le message
                                     </>
                                 )}

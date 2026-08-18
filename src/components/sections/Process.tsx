@@ -97,7 +97,7 @@ export function ProcessSection() {
                     {/* Ligne de connexion verticale */}
                     <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20 hidden lg:block"></div>
 
-                    <div className="space-y-12 lg:space-y-16">
+                    <div className="flex flex-col gap-12 lg:gap-16">
                         {steps.map((step, index) => {
                             const IconComponent = step.icon;
                             const isEven = index % 2 === 0;
@@ -121,7 +121,7 @@ export function ProcessSection() {
                                             <div className="p-8">
                                                 {/* Header avec numéro et icône */}
                                                 <div className="flex items-center gap-4 mb-6">
-                                                    <div className="flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 border-2 border-primary/20">
+                                                    <div className="flex items-center justify-center size-16 rounded-full bg-primary/10 border-2 border-primary/20">
                                                         <span className="text-2xl font-bold text-primary font-rakiby">
                                                             {step.number}
                                                         </span>
@@ -150,7 +150,7 @@ export function ProcessSection() {
                                                     <h4 className="font-semibold mb-3 text-sm text-primary">
                                                         Points clés :
                                                     </h4>
-                                                    <ul className="space-y-2">
+                                                    <ul className="flex flex-col gap-2">
                                                         {step.features.map(
                                                             (
                                                                 feature,
@@ -181,7 +181,7 @@ export function ProcessSection() {
 
                                     {/* Espaceur pour la ligne de connexion */}
                                     <div className="hidden lg:flex w-2/12 justify-center">
-                                        <div className="w-8 h-8 rounded-full bg-primary/20 border-4 border-background flex items-center justify-center">
+                                        <div className="size-8 rounded-full bg-primary/20 border-4 border-background flex items-center justify-center">
                                             <ArrowRight className="size-4 text-primary" />
                                         </div>
                                     </div>

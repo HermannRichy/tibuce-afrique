@@ -47,8 +47,8 @@ export default function Logout() {
         <div className="min-h-screen bg-background flex items-center justify-center p-4">
             <Card className="w-full max-w-md">
                 <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                        <User className="h-8 w-8 text-primary" />
+                    <div className="mx-auto mb-4 size-16 bg-primary/10 rounded-full flex items-center justify-center">
+                        <User className="size-8 text-primary" />
                     </div>
                     <CardTitle className="text-2xl font-bold font-rakiby text-primary">
                         Déconnexion
@@ -60,14 +60,14 @@ export default function Logout() {
                         </span>
                     </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="flex flex-col gap-4">
                     {error && (
                         <Alert variant="destructive">
                             <AlertDescription>{error}</AlertDescription>
                         </Alert>
                     )}
 
-                    <div className="space-y-3">
+                    <div className="flex flex-col gap-3">
                         <Button
                             onClick={handleLogout}
                             variant="destructive"
@@ -76,12 +76,12 @@ export default function Logout() {
                         >
                             {loading ? (
                                 <>
-                                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                    <Loader2 className="mr-2 size-4 animate-spin" />
                                     Déconnexion en cours...
                                 </>
                             ) : (
                                 <>
-                                    <LogOut className="mr-2 h-4 w-4" />
+                                    <LogOut className="mr-2 size-4" />
                                     Se déconnecter
                                 </>
                             )}
@@ -93,7 +93,7 @@ export default function Logout() {
                             className="w-full"
                             disabled={loading}
                         >
-                            <ArrowLeft className="mr-2 h-4 w-4" />
+                            <ArrowLeft className="mr-2 size-4" />
                             Retour
                         </Button>
                     </div>

@@ -1,3 +1,11 @@
+allowBuilds:
+  '@firebase/util': true
+  '@prisma/engines': true
+  '@tailwindcss/oxide': true
+  core-js: true
+  prisma: true
+  protobufjs: true
+  unrs-resolver: true
 ignoredBuiltDependencies:
   - '@firebase/util'
   - '@prisma/client'

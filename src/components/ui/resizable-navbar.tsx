@@ -120,7 +120,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <motion.div
             onMouseLeave={() => setHovered(null)}
             className={cn(
-                "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+                "absolute inset-0 hidden flex-1 flex-row items-center justify-center gap-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex",
                 className
             )}
         >
@@ -233,15 +233,15 @@ export const NavbarLogo = () => {
     return (
         <Link
             href="/"
-            className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+            className="relative z-20 mr-4 flex items-center gap-2 px-2 py-1 text-sm font-normal text-black"
         >
-            <div className="rounded-full overflow-hidden bg-white flex items-center justify-center w-14 h-14">
+            <div className="rounded-full overflow-hidden bg-white flex items-center justify-center size-14">
                 <Image
                     src="/logo-tibuce.png"
                     alt="logo tibuce"
                     width={50}
                     height={50}
-                    className="object-cover w-13 h-13"
+                    className="object-cover size-13"
                 />
             </div>
             <span className="font-medium font-rakiby uppercase text-black dark:text-white">
